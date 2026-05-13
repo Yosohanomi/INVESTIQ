@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
-import './index.scss'
-import './reset.scss'
+import './index.css'
+import './reset.css'
 import 'normalize.css';
 import App from './app/App.jsx'
 
