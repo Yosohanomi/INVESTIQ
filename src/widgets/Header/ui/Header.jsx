@@ -1,32 +1,38 @@
 import Container from '../../../shared/ui/Container/Container'
 import SVGIcon from '../../../assets/svg/symbol-defs.svg'
-
+import styles from './Header.module.scss'
 
 export default function Header() {
   return (
-    <header>
-             <Container>
-                 <div>
-                     <div>
-                         <svg>
-                             <use href={`${SVGIcon}#icon-logo`}/>
-                         </svg>
-                         <p>INVESTIQ</p>
-                     </div>
+    <header className={styles.header}>
+      <Container>
+        <div className={styles.header__inner}>
+            <div  className={styles.header__first__thumb}>
+                <a className={styles.logo} href="#">
+                    <svg className={styles.logo__icon}>
+                    <use href={`${SVGIcon}#icon-logo`} />
+                    </svg>
+                    <p className={styles.logo__text}>INVESTIQ</p>
+                </a>
+            
+        </div>
+            
+        <div className={styles.header__second__thumb}>
+            <div className={styles.user}>
+                <div className={styles.user__avatar}>U</div>
+                <p className={styles.user__name}>User name</p>
+            </div>
 
-                     <div>
-                         <div>
-                             U
-                         </div>
-                         <p>User name</p>
-                     </div>
-
-                     <p>Вийти</p>
-                     <svg>
-                             <use href={`${SVGIcon}#icon-logout`}/>
-                         </svg>
-                 </div>
-             </Container>
-         </header>
+            <a href='#' className={styles.logout}>
+                <p className={styles.logout__text}>Вийти</p>
+                <svg fill="currentColor" className={`${styles.logout__icon} ${styles.isHidden}`}>
+                <use href={`${SVGIcon}#icon-logout`} />
+                </svg>
+            </a>
+        </div>
+          
+        </div>
+      </Container>
+    </header>
   )
 }

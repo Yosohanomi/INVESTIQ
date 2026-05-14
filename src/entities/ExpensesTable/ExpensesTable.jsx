@@ -18,23 +18,31 @@ export default function ExpensesTable() {
                                 </td>
                                 <td>{`Метро (Lorem ipsum dolor sit...`}</td>
                                 <td>Транспорт</td>
-                                <td>- 30.00 грн. </td>
-                                <button>
-                                        <svg>
-                                            <use href={`${SVGIcon}#icon-trashbin`}/>
-                                        </svg>
-                                    </button>
+                                <td>
+                                    <div>
+                                        <span>- 30.00 грн</span>
+                                        <button>
+                                            <svg>
+                                            <use href={`${SVGIcon}#icon-trashbin`} />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td>05.09.2019</td>
                                 <td>Банани</td>
                                 <td>Продукти</td>
-                                <td>- 50.00 грн.</td>
-                                <button>
-                                        <svg>
-                                            <use href={`${SVGIcon}#icon-trashbin`}/>
-                                        </svg>
-                                    </button>
+                                <td>
+                                    <div>
+                                        <span>- 50.00 грн</span>
+                                        <button>
+                                            <svg>
+                                            <use href={`${SVGIcon}#icon-trashbin`} />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

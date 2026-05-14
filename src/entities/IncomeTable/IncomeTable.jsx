@@ -18,23 +18,31 @@ export default function IncomeTable() {
                                 </td>
                                 <td>Моя зп</td>
                                 <td>зп</td>
-                                <td>20 000.00 грн. </td>
-                                <button>
-                                        <svg>
-                                            <use href={`${SVGIcon}#icon-trashbin`}/>
-                                        </svg>
-                                    </button>
+                                <td>
+                                    <div>
+                                        <span>20 000.00 грн</span>
+                                        <button>
+                                            <svg>
+                                            <use href={`${SVGIcon}#icon-trashbin`} />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td>05.09.2019</td>
                                 <td>% на залишок на карті</td>
                                 <td>Дод. прибуток</td>
-                                <td>500.00 грн.</td>
-                                <button>
-                                        <svg>
-                                            <use href={`${SVGIcon}#icon-trashbin`}/>
-                                        </svg>
-                                    </button>
+                                <td>
+                                    <div>
+                                        <span>500.00 грн</span>
+                                        <button>
+                                            <svg>
+                                            <use href={`${SVGIcon}#icon-trashbin`} />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

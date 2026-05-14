@@ -1,0 +1,88 @@
+@use '../../../shared/ui/styles/variables.scss' as *;
+
+.header {
+    background-color: var(--bg);
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12.5px 0px;
+    position: relative;
+}
+
+.header__first__thumb {
+
+}
+
+.logo {
+    position: absolute;
+    left: 0;
+    top: 12.5px;
+}
+
+.logo__icon {
+    position: relative;
+    width: 39px;
+    height: 31px;
+}
+
+.logo__text {
+    position: absolute;
+    top: 9px;
+    left: 22px;
+    @include text(var(--black-text), 16px, 800, 0.05em)
+}
+
+.header__second__thumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.user {
+    border-radius: 100%;
+    background-color: #f5f6fa;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user__avatar {
+    @include text(var(--dark-text), 12px, 700, 0.05em)
+}
+
+.user__name {
+    display: none;
+}
+
+.logout {
+    transition: all 0.5s var(--animation);
+}
+.logout:hover,
+.logout:focus {
+    fill: #52555f;
+    color: var(--dark-text);
+}
+
+.logout__text {
+    display: none;
+}
+
+.logout__icon {
+    fill: #cbccd0;
+    width: 16px;
+    height: 16px;
+    transition: all 0.4s var(--animation);
+}
+
+
+.logout:hover .logout__icon,
+.logout:focus .logout__icon {
+    fill: #52555f;
+}

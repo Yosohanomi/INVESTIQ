@@ -1,0 +1,8 @@
+@mixin text ($color, $font-size, $font-weight, $letter-spacing) {
+	color: $color;
+	font-family: var(--font-family);
+    font-weight: $font-weight;
+    font-size: $font-size;
+    letter-spacing: $letter-spacing;
+    text-transform: uppercase;
+}

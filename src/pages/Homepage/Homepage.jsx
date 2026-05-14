@@ -44,7 +44,7 @@ export default function Homepage() {
                         type="text" 
                         placeholder="Вода..." 
                     />
-                    <select class="category-select">
+                    <select>
                     <option value="">Категорія товару</option>
                     <option value="транспорт">Транспорт</option>
                     <option value="продукти">Продукти</option>
