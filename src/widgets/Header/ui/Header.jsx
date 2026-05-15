@@ -20,7 +20,7 @@ export default function Header() {
         <div className={styles.header__second__thumb}>
             <div className={styles.user}>
                 <div className={styles.user__avatar}>U</div>
-                <p className={styles.user__name}>User name</p>
+                <p className={styles.user__name}>User Name</p>
             </div>
 
             <a href='#' className={styles.logout}>

@@ -54,6 +54,74 @@
 body {
   margin: 0;
   font-family: var(--font-family);
+
+  background-image: 
+  url('./assets/img/bg-elements.webp'), 
+  url('./assets/img/upperBg.webp');
+
+  background-repeat: 
+    repeat-x, 
+    no-repeat; 
+
+  background-position: 
+    center bottom 10px, 
+    center top;         
+
+
+  background-size: 
+    900px auto,  
+    100% 50vh; 
+  background-attachment: fixed, fixed; 
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+    font-family: var(--font-family);
+  
+    background-image: 
+    url('./assets/img/bg-two-elements.webp'), 
+    url('./assets/img/upperBg.webp');
+  
+    background-repeat: 
+      no-repeat, 
+      no-repeat; 
+  
+    background-position: 
+      right 88px bottom 64px, 
+      center top;         
+  
+  
+    background-size: 
+      198px auto,  
+      100% 50vh; 
+    background-attachment: fixed, fixed; 
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  body {
+    margin: 0;
+    font-family: var(--font-family);
+  
+    background-image: 
+    url('./assets/img/bg-elements.webp'), 
+    url('./assets/img/upperBg.webp');
+  
+    background-repeat: 
+      repeat-x, 
+      no-repeat; 
+  
+    background-position: 
+      center bottom 10px, 
+      center top;         
+  
+  
+    background-size: 
+      700px auto,  
+      100% 70vh; 
+    background-attachment: fixed, fixed; 
+  }
 }
 
 /* #root {

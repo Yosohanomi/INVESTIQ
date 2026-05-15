@@ -1,0 +1,118 @@
+@use '../../shared/ui/styles/variables.scss' as *;
+
+
+.homepage {
+    &__balance-section {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 40px;
+        margin-bottom: 48px;
+    }
+    
+    &__balance-text {
+        @include text(var(--text), 12px, 500, 0.02em);
+        text-transform: none;
+    }
+    
+    &__balance-form {
+        display: flex;
+        gap: 15px;
+    }
+    
+    
+    &__balance-input {
+        background-color: transparent;
+        padding: 12px 20px;
+        text-align: center;
+        border: 2px solid #fff;
+        border-radius: 16px;
+        width: 125px;
+        @include text(var(--black-text), 12px, 700, 0.02em);
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+        
+        
+    }
+    &__balance-input::placeholder {
+        @include text(var(--black-text), 12px, 700, 0.02em);
+    }
+    &__balance-input:focus {
+        outline: none;
+    }
+    
+    &__balance-submit {
+        background-color: transparent;
+        text-align: center;
+        padding: 12px 20px;
+        border: 2px solid #fff;
+        border-radius: 16px;
+        width: 125px;
+        @include text(var(--text), 12px, 500, 0.02em);
+    }
+    
+    &__calculate-link {
+        display: flex;
+        gap: 15px;
+    }
+    
+    &__calculate-text {
+        @include text(var(--text), 12px, 400, 0.04em);
+        text-transform: none;
+    }
+    
+    &__calculate-icon {
+        fill: #52555f;
+        width: 14px;
+        height: 14px;
+    }
+    
+    &__transaction-controls {
+    }
+    
+    &__tab-button {
+      
+      &--expense {
+      }
+      
+      &--income {
+      }
+    }
+    
+    &__tab-link {
+    }
+    
+    &__transaction-form {
+    }
+    
+    &__date-button {
+    }
+    
+    &__date-icon {
+    }
+    
+    &__description-input {
+    }
+    
+    &__category-select {
+    }
+    
+    &__amount-container {
+    }
+    
+    &__amount-input {
+    }
+    
+    &__calculator-icon {
+    }
+    
+    &__action-buttons {
+    }
+    
+    &__income-table {
+    }
+  }
