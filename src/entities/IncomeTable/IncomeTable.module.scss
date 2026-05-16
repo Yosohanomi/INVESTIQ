@@ -1,54 +1,139 @@
+@use '../../shared/ui/styles/variables.scss' as *;
+
 .income-table {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 30px;
+    padding-bottom: 62px;
+    &__thumb{
+      border: 2px solid #f5f6fb;
+      border-radius: 16px 16px 0 0;
+      overflow: hidden;
+      border-collapse: collapse;
+      overflow-y: scroll;
+      overflow-x: auto;
+      width: 100%; 
+
+      
+    }
     
+
     &__table {
+      width: 100%;
+      max-height: 382px;
+      border-collapse: collapse;
+      table-layout: fixed;
     }
     
     &__header {
+      background-color: #f5f6fb;
     }
     
     &__header-row {
     }
     
     &__header-cell {
+      @include text(var(--black-text), 12px, 700, 0.02em);
+      padding: 16px 20px;
+
+      white-space: nowrap;
+  
+      position: sticky;
+      top: 0;        
+      z-index: 1;       
+      background-color: #f5f6fb;
     }
     
     &__body {
+      
     }
     
     &__row {
+      border-bottom: 2px solid #f5f6fb;
+      
     }
     
     &__cell {
+      border-bottom: 2px solid #f5f6fb;
+      @include text(var(--dark-text), 12px, 400, 0.04em);
+      padding: 16px 20px;
     }
     
     &__amount-wrapper {
+      display: flex;
+      
+      justify-content: center;align-items: center;
+      gap: 50px;
     }
     
     &__amount {
     }
     
     &__delete-button {
+      padding: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      transition: all 0.3s var(--animation);
+    }
+
+    &__delete-button:hover,
+    &__delete-button:focus {
+      border-radius: 100%;
+      background-color: #f5f6fb;
     }
     
     &__delete-icon {
+      width: 18px;
+      height: 18px;
+      fill: #52555f;
     }
     
     &__summary {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+      background-color: #f5f6fb;
+      width: 230px;
+
+      overflow: hidden;
+      border: 
+      5px solid #fefefe;
+      border-radius: 16px 16px 0 0;
     }
     
     &__summary-title {
+      @include text(var(--black-text), 12px, 700, 0.02em);
+      border-bottom: 2px solid #fefefe;
+      text-align: center;
+      width: 100%;
+      padding: 15px 20px;
     }
     
     &__summary-list {
     }
     
     &__summary-item {
+      display: flex;
+      padding: 15px 20px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 2px solid #fefefe;
     }
     
     &__summary-month {
+      @include text(var(--dark-text), 12px, 400, 0.04em);
+      text-align: left;
     }
     
     &__summary-amount {
+      @include text(var(--dark-text), 12px, 400, 0.04em);
+      text-align: right;
     }
   }
 
