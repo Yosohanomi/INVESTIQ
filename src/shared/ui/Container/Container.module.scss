@@ -1,6 +1,6 @@
 .container {
     width: 282px;
-    padding: 0px 19px;
+    padding: 0px 15px;
     border: 1px solid red;
     margin: 0 auto;
 }
@@ -8,7 +8,7 @@
 @media screen and (min-width: 768px) {
     .container {
         width: 665px;
-        padding: 0px 51.5px;
+        padding: 0px 20px;
     }
     
 }
@@ -16,7 +16,6 @@
 @media screen and (min-width: 1280px) {
     .container {
         width: 1060px;
-        padding: 0px 110px;
     }
     
 }

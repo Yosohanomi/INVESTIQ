@@ -1,0 +1,10 @@
+@use "../../../shared/ui/styles/variables.scss" as *;
+
+.button {
+    background-color: transparent;
+    border: 2px solid #f5f6fb;
+    padding: 12px 24px;
+    border-radius: 16px;
+    @include text(var(--black-text), 12px, 700, 0.02em);
+    width: 125px;
+}

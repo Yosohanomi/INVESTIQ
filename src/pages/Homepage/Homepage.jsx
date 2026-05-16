@@ -50,45 +50,49 @@ export default function Homepage() {
           </div>
 
           <div className={styles['homepage__transaction-form']}>
-            <div>
-              <button 
-                className={styles['homepage__date-button']}
-                type="button"
-              >
-                <svg className={styles['homepage__date-icon']}>
-                  <use href={`${SVGIcon}#icon-calendar`}/>
-                </svg>
-                21.11.2019
-              </button>
-              <input 
-                className={styles['homepage__description-input']}
-                type="text" 
-                placeholder="Вода..." 
-              />
-              <select className={styles['homepage__category-select']}>
-                <option value="">Категорія товару</option>
-                <option value="транспорт">Транспорт</option>
-                <option value="продукти">Продукти</option>
-                <option value="здоров'я">Здоров'я</option>
-                <option value="алкоголь">Алкоголь</option>
-                <option value="розваги">Розваги</option>
-                <option value="все-для-дому">Все для дому</option>
-                <option value="техніка">Техніка</option>
-                <option value="комуналка-зв'язок">Комуналка, зв'язок</option>
-                <option value="спорт-хобі">Спорт, хобі</option>
-                <option value="навчання">Навчання</option>
-                <option value="інше">Інше</option>
-              </select>
-              <div className={styles['homepage__amount-container']}>
+              <div className={styles['homepage__transaction-thumb']}>
+                <button 
+                  className={styles['homepage__date-button']}
+                  type="button"
+                >
+                  <svg className={styles['homepage__date-icon']}>
+                    <use href={`${SVGIcon}#icon-calendar`}/>
+                  </svg>
+                  21.11.2019
+                </button>
+
+                <div className={styles['homepage__input-thumb']}>
                 <input 
-                  className={styles['homepage__amount-input']}
-                  type="number" 
-                  placeholder="0,00" 
+                  className={styles['homepage__description-input']}
+                  type="text" 
+                  placeholder="Опис товару" 
                 />
-                <svg className={styles['homepage__calculator-icon']}>
-                  <use href={`${SVGIcon}#icon-calculator`}/>
-                </svg>
+                <select className={styles['homepage__category-select']}>
+                  <option value="">Категорія товару</option>
+                  <option value="транспорт">Транспорт</option>
+                  <option value="продукти">Продукти</option>
+                  <option value="здоров'я">Здоров'я</option>
+                  <option value="алкоголь">Алкоголь</option>
+                  <option value="розваги">Розваги</option>
+                  <option value="все-для-дому">Все для дому</option>
+                  <option value="техніка">Техніка</option>
+                  <option value="комуналка-зв'язок">Комуналка, зв'язок</option>
+                  <option value="спорт-хобі">Спорт, хобі</option>
+                  <option value="навчання">Навчання</option>
+                  <option value="інше">Інше</option>
+                </select>
+                <div className={styles['homepage__amount-container']}>
+                  <input 
+                    className={styles['homepage__amount-input']}
+                    type="number" 
+                    placeholder="0,00" 
+                  />
+                  <svg className={styles['homepage__calculator-icon']}>
+                    <use href={`${SVGIcon}#icon-calculator`}/>
+                  </svg>
+                </div>
               </div>
+              
 
               <div className={styles['homepage__action-buttons']}>
                 <RedButton text="Ввести"/>

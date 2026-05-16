@@ -75,6 +75,16 @@
     }
     
     &__tab-button {
+        padding: 15px 42px;
+        border-radius: 20px 20px 0 0;
+        background-color: #fafbfd;
+        width: 138px;
+        transition: all 0.3s var(--animation);
+        
+        &:hover,
+        &:focus {
+            background-color: #fefefe;
+        }
       
       &--expense {
       }
@@ -84,33 +94,115 @@
     }
     
     &__tab-link {
+        @include text(var(--black-color), 12px, 700, 0.02em);
+        transition: all 0.3s var(--animation);
+    }
+
+    &__tab-button:hover &__tab-link,
+    &__tab-button:focus &__tab-link{
+        @include text(var(--red-color), 12px, 700, 0.02em);
     }
     
     &__transaction-form {
+        border-radius: 0 30px 30px 30px;
+        box-shadow: 0 10px 60px 0 rgba(170, 178, 197, 0.2);
+        background: #fff;
+        padding: 0px 20px;
+    }
+
+    &__transaction-thumb {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 33px;
+        padding-bottom: 60px;
+    }
+
+    &__input-thumb {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 2px solid #f5f6fb;
+        border-radius: 16px 16px 16px 0px;
     }
     
     &__date-button {
+        background-color: transparent;
+        @include text(var(--dark-text), 12px, 900, 0.04em);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
     }
     
     &__date-icon {
+        width: 20px;
+        height: 20px;
+        fill: #52555f;
     }
     
     &__description-input {
+        @include text(var(--dark-text), 12px, 400, 0.02em);
+        text-transform: none;
+        height: 40px;
+        border-right: 2px solid #f5f6fb;
+        padding-left: 20px;
+    }
+    &__description-input:focus {
+        outline: none;
+    }
+    &__description-input::placeholder {
+        @include text(var(--light-text), 12px, 400, 0.02em);
+        text-transform: none;
     }
     
     &__category-select {
+        @include text(var(--light-text), 12px, 400, 0.02em);
+        text-transform: none;
+        height: 40px;
+        border-right: 2px solid #f5f6fb;
+        padding-left: 20px;
+        padding-right: 22px;
+        appearance: none;
     }
+    &__category-select:focus {
+        outline: none;
+    }
+
     
     &__amount-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        padding-right: 20px;
     }
     
     &__amount-input {
+        @include text(var(--dark-text), 12px, 400, 0.02em);
+        text-transform: none;
+        text-align: right;
+        
+    }
+    &__amount-input:focus {
+        outline: none;
+    }
+    &__amount-input::placeholder {
+        @include text(var(--light-text), 12px, 400, 0.02em);
+        text-transform: none;
+        
     }
     
     &__calculator-icon {
+        width: 20px;
+        height: 20px;
+        fill: #52555f;
+        
     }
     
     &__action-buttons {
+        display: flex;
+        gap: 15px;
     }
     
     &__income-table {
