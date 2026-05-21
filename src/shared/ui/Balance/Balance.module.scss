@@ -1,0 +1,46 @@
+@use '../../ui/styles/variables.scss' as *;
+.balance {
+    &__text {
+        @include text(var(--text), 12px, 500, 0.02em);
+        text-transform: none;
+    }
+    
+    &__form {
+        display: flex;
+        gap: 15px;
+    }
+    
+    &__input {
+        background-color: transparent;
+        padding: 12px 20px;
+        text-align: center;
+        border: 2px solid #fff;
+        border-radius: 16px;
+        width: 125px;
+        @include text(var(--black-text), 12px, 700, 0.02em);
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+    
+    &__input::placeholder {
+        @include text(var(--black-text), 12px, 700, 0.02em);
+    }
+    
+    &__input:focus {
+        outline: none;
+    }
+    
+    &__submit {
+        background-color: transparent;
+        text-align: center;
+        padding: 12px 20px;
+        border: 2px solid #fff;
+        border-radius: 16px;
+        width: 125px;
+        @include text(var(--text), 12px, 500, 0.02em);
+    }
+}

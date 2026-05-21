@@ -5,13 +5,16 @@ import IncomeTable from '../../entities/IncomeTable/IncomeTable'
 import ExpensesTable from '../../entities/ExpensesTable/ExpensesTable'
 import Container from '../../shared/ui/Container/Container'
 import styles from './Homepage.module.scss'
+import { Link } from 'react-router'
+import { Balance } from '../../shared/ui/Balance/Balance'
 
 export default function Homepage() {
   return (
     <div className={styles['homepage']}>
       <Container>
         <div className={styles['homepage__balance-section']}>
-          <p className={styles['homepage__balance-text']}>Баланс:</p>
+          <Balance/>
+          {/* <p className={styles['homepage__balance-text']}>Баланс:</p>
           <form className={styles['homepage__balance-form']}>
             <input 
               className={styles['homepage__balance-input']}
@@ -24,13 +27,13 @@ export default function Homepage() {
             >
               ПІДТВЕРДИТИ
             </button>
-          </form>
-          <a className={styles['homepage__calculate-link']}>
-            <p className={styles['homepage__calculate-text']}>Перейти до розрахунків</p>
-            <svg className={styles['homepage__calculate-icon']}>
-              <use href={`${SVGIcon}#icon-statistics`}/>
-            </svg>
-          </a>
+          </form> */}
+          <Link to="/report" className={styles['homepage__calculate-link']}>
+            <p className={styles['homepage__calculate-text']}>Перейти до звіту</p>
+              <svg className={styles['homepage__calculate-icon']}>
+                <use href={`${SVGIcon}#icon-statistics`}/>
+              </svg>
+          </Link>
         </div>
 
         <div className={styles['homepage__transaction-controls']}>

@@ -1,1 +1,13 @@
-/*# sourceMappingURL=GrayButton.module.css.map */
+.button {
+  background-color: transparent;
+  border: 2px solid #f5f6fb;
+  padding: 12px 24px;
+  border-radius: 16px;
+  color: var(--black-text);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  width: 125px;
+}/*# sourceMappingURL=GrayButton.module.css.map */

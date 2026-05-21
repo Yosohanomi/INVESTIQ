@@ -1,1 +1,125 @@
-/*# sourceMappingURL=IncomeTable.module.css.map */
+.income-table {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 30px;
+  padding-bottom: 62px;
+}
+.income-table__thumb {
+  border: 2px solid #f5f6fb;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  border-collapse: collapse;
+  overflow-y: scroll;
+  overflow-x: auto;
+  width: 100%;
+}
+.income-table__table {
+  width: 100%;
+  max-height: 382px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.income-table__header {
+  background-color: #f5f6fb;
+}
+.income-table__header-cell {
+  color: var(--black-text);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 16px 20px;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #f5f6fb;
+}
+.income-table__row {
+  border-bottom: 2px solid #f5f6fb;
+}
+.income-table__cell {
+  border-bottom: 2px solid #f5f6fb;
+  color: var(--dark-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 16px 20px;
+}
+.income-table__amount-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.income-table__delete-button {
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: all 0.3s var(--animation);
+}
+.income-table__delete-button:hover, .income-table__delete-button:focus {
+  border-radius: 100%;
+  background-color: #f5f6fb;
+}
+.income-table__delete-icon {
+  width: 18px;
+  height: 18px;
+  fill: #52555f;
+}
+.income-table__summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  background-color: #f5f6fb;
+  width: 230px;
+  overflow: hidden;
+  border: 5px solid #fefefe;
+  border-radius: 16px 16px 0 0;
+}
+.income-table__summary-title {
+  color: var(--black-text);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border-bottom: 2px solid #fefefe;
+  text-align: center;
+  width: 100%;
+  padding: 15px 20px;
+}
+.income-table__summary-item {
+  display: flex;
+  padding: 15px 20px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 2px solid #fefefe;
+}
+.income-table__summary-month {
+  color: var(--dark-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: left;
+}
+.income-table__summary-amount {
+  color: var(--dark-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: right;
+}/*# sourceMappingURL=IncomeTable.module.css.map */

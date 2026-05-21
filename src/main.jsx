@@ -3,7 +3,12 @@ import './index.css'
 import './reset.css'
 import 'normalize.css';
 import App from './app/App.jsx'
+import { RouterProvider } from 'react-router';
+import { router } from './app/routes/router.js';
 
 createRoot(document.getElementById('root')).render(
-    <App />
+    <RouterProvider router={router}>
+        
+    </RouterProvider>
+    
 )

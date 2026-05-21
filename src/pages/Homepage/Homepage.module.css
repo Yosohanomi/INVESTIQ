@@ -1,1 +1,189 @@
-/*# sourceMappingURL=Homepage.module.css.map */
+.homepage__balance-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 48px;
+}
+.homepage__calculate-link {
+  display: flex;
+  gap: 15px;
+}
+.homepage__calculate-text {
+  color: var(--text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-transform: none;
+}
+.homepage__calculate-icon {
+  fill: #52555f;
+  width: 14px;
+  height: 14px;
+}
+.homepage__tab-button {
+  padding: 15px 42px;
+  border-radius: 20px 20px 0 0;
+  background-color: #fafbfd;
+  width: 138px;
+  transition: all 0.3s var(--animation);
+}
+.homepage__tab-button:hover, .homepage__tab-button:focus {
+  background-color: #fefefe;
+}
+.homepage__tab-link {
+  color: var(--black-color);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transition: all 0.3s var(--animation);
+}
+.homepage__tab-button:hover .homepage__tab-link, .homepage__tab-button:focus .homepage__tab-link {
+  color: var(--red-color);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.homepage__transaction-form {
+  border-radius: 0 30px 30px 30px;
+  box-shadow: 0 10px 60px 0 rgba(170, 178, 197, 0.2);
+  background: #fff;
+  padding: 0px 20px;
+}
+.homepage__transaction-thumb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 33px;
+  padding-bottom: 60px;
+}
+.homepage__input-thumb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #f5f6fb;
+  border-radius: 16px 16px 16px 0px;
+}
+.homepage__date-button {
+  background-color: transparent;
+  color: var(--dark-text);
+  font-family: var(--font-family);
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.homepage__date-icon {
+  width: 20px;
+  height: 20px;
+  fill: #52555f;
+}
+.homepage__description-input {
+  color: var(--dark-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-transform: none;
+  height: 40px;
+  border-right: 2px solid #f5f6fb;
+  padding-left: 20px;
+}
+.homepage__description-input:focus {
+  outline: none;
+}
+.homepage__description-input::-moz-placeholder {
+  color: var(--light-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-transform: none;
+}
+.homepage__description-input::placeholder {
+  color: var(--light-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-transform: none;
+}
+.homepage__category-select {
+  color: var(--light-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-transform: none;
+  height: 40px;
+  border-right: 2px solid #f5f6fb;
+  padding-left: 20px;
+  padding-right: 22px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.homepage__category-select:focus {
+  outline: none;
+}
+.homepage__amount-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding-right: 20px;
+}
+.homepage__amount-input {
+  color: var(--dark-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-transform: none;
+  text-align: right;
+}
+.homepage__amount-input:focus {
+  outline: none;
+}
+.homepage__amount-input::-moz-placeholder {
+  color: var(--light-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-transform: none;
+}
+.homepage__amount-input::placeholder {
+  color: var(--light-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-transform: none;
+}
+.homepage__calculator-icon {
+  width: 20px;
+  height: 20px;
+  fill: #52555f;
+}
+.homepage__action-buttons {
+  display: flex;
+  gap: 15px;
+}/*# sourceMappingURL=Homepage.module.css.map */

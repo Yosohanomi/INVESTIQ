@@ -1,0 +1,64 @@
+.balance__text {
+  color: var(--text);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-transform: none;
+}
+.balance__form {
+  display: flex;
+  gap: 15px;
+}
+.balance__input {
+  background-color: transparent;
+  padding: 12px 20px;
+  text-align: center;
+  border: 2px solid #fff;
+  border-radius: 16px;
+  width: 125px;
+  color: var(--black-text);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.balance__input::-webkit-inner-spin-button, .balance__input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.balance__input::-moz-placeholder {
+  color: var(--black-text);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.balance__input::placeholder {
+  color: var(--black-text);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.balance__input:focus {
+  outline: none;
+}
+.balance__submit {
+  background-color: transparent;
+  text-align: center;
+  padding: 12px 20px;
+  border: 2px solid #fff;
+  border-radius: 16px;
+  width: 125px;
+  color: var(--text);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}/*# sourceMappingURL=Balance.module.css.map */
