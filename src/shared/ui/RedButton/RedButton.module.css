@@ -1,12 +1,12 @@
 .button {
   background-color: var(--red-color);
-  padding: 12px 24px;
+  padding: 0.75rem 1.5rem;
   border-radius: 16px;
   color: var(--bg);
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  width: 125px;
+  width: 7.8125rem;
 }/*# sourceMappingURL=RedButton.module.css.map */

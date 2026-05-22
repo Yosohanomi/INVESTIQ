@@ -2,8 +2,8 @@
 
 .button {
     background-color: var(--red-color);
-    padding: 12px 24px;
+    padding: .75rem 1.5rem;
     border-radius: 16px;
-    @include text(var(--bg), 12px, 700, 0.02em);
-    width: 125px;
+    @include text(var(--bg), .75rem, 700, 0.02em);
+    width: 7.8125rem;
 }

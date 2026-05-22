@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12.5px 0px;
+    padding: .7813rem 0rem;
     position: relative;
 }
 
@@ -19,27 +19,33 @@
 .logo {
     position: absolute;
     left: 0;
-    top: 12px;
+    top: .75rem;
+    @media (any-hover: hover) {
+        &:hover, 
+        &:focus {
+            cursor: pointer;
+        }
+    }
 }
 
 .logo__icon {
     position: relative;
-    width: 39px;
-    height: 31px;
+    width: 2.4375rem;
+    height: 1.9375rem;
 }
 
 .logo__text {
     position: absolute;
-    top: 9px;
-    left: 22px;
-    @include text(var(--black-text), 16px, 800, 0.05em)
+    top: .5625rem;
+    left: 1.375rem;
+    @include text(var(--black-text), 1rem, 800, 0.05em)
 }
 
 .header__second__thumb {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: .9375rem;
 }
 
 .user {
@@ -50,11 +56,11 @@
 }
 
 .user__avatar {
-    @include text(var(--dark-text), 12px, 700, 0.05em);
+    @include text(var(--dark-text), .75rem, 700, 0.05em);
     border-radius: 100%;
     background-color: #f5f6fa;
-    width: 32px;
-    height: 32px;
+    width: 2rem;
+    height: 2rem;
     text-align: center;
     display: flex;
     align-items: center;
@@ -68,11 +74,15 @@
 .logout {
     transition: all 0.5s var(--animation);
 }
-.logout:hover,
-.logout:focus {
-    fill: #52555f;
-    color: var(--dark-text);
+
+@media (any-hover: hover) {
+    .logout:hover,
+    .logout:focus {
+        fill: #52555f;
+        color: var(--dark-text);
+    }
 }
+
 
 .logout__text {
     display: none;
@@ -80,22 +90,24 @@
 
 .logout__icon {
     fill: #cbccd0;
-    width: 16px;
-    height: 16px;
+    width: 1rem;
+    height: 1rem;
     transition: all 0.4s var(--animation);
 }
 
-
-.logout:hover .logout__icon,
-.logout:focus .logout__icon {
-    fill: #52555f;
+@media (any-hover: hover) {
+    .logout:hover .logout__icon,
+    .logout:focus .logout__icon {
+        fill: #52555f;
 }
+}
+
 
 
 @media screen and (min-width: 768px) {
     .header {
         position: relative;
-        padding: 12px;
+        padding: .75rem;
     }
     
     .header__inner {
@@ -104,41 +116,44 @@
     
     
     .logo {
-        left: 26px;
+        left: 1.625rem;
     }
 
     .header__second__thumb {
         position: absolute;
-        right: 26px;
+        right: 1.625rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 15px;
+        gap: .9375rem;
     }
     
     .user {
-        gap: 10px;
-        border-right: 1px solid #e0e5eb;
-        padding-right: 20px;
+        gap: .625rem;
+        border-right: .0625rem solid #e0e5eb;
+        padding-right: 1.25rem;
     }
     
     .user__name {
         display: block;
-        @include text(var(--dark-text), 12px, 400, 0.04em);
+        @include text(var(--dark-text), .75rem, 400, 0.04em);
         text-transform:none;
     }
 
     
     .logout__text {
         display: block;
-        @include text(var(--dark-text), 12px, 400, 0.04em);
+        @include text(var(--dark-text), .75rem, 400, 0.04em);
         text-transform:none;
         transition: all 0.5s var(--animation);          
     }
-    .logout__text:hover,
-    .logout__text:focus {
-        text-decoration: underline; 
+    @media (any-hover: hover) {
+        .logout__text:hover,
+        .logout__text:focus {
+            text-decoration: underline; 
+        }
     }
+    
     
     .logout__icon {
         display: none;

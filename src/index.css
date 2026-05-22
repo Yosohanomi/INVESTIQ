@@ -88,12 +88,12 @@ body {
       no-repeat; 
   
     background-position: 
-      right 88px bottom 64px, 
+      right 5.5rem bottom 4rem, 
       center top;         
   
   
     background-size: 
-      198px auto,  
+      12.375rem auto,  
       100% 50vh; 
     background-attachment: fixed, fixed; 
   }
@@ -113,12 +113,12 @@ body {
       no-repeat; 
   
     background-position: 
-      center bottom 10px, 
+      center bottom .625rem, 
       center top;         
   
   
     background-size: 
-      700px auto,  
+      43.75rem auto,  
       100% 70vh; 
     background-attachment: fixed, fixed; 
   }

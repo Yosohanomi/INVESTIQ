@@ -1,13 +1,13 @@
 @use '../../ui/styles/variables.scss' as *;
 .balance {
     &__text {
-        @include text(var(--text), 12px, 500, 0.02em);
+        @include text(var(--text), .75rem, 500, 0.02em);
         text-transform: none;
     }
     
     &__form {
         display: flex;
-        gap: 15px;
+        gap: .9375rem;
     }
     
     &__input {
@@ -17,7 +17,7 @@
         border: 2px solid #fff;
         border-radius: 16px;
         width: 125px;
-        @include text(var(--black-text), 12px, 700, 0.02em);
+        @include text(var(--black-text), .75rem, 700, 0.02em);
 
         &::-webkit-inner-spin-button,
         &::-webkit-outer-spin-button {
@@ -27,7 +27,7 @@
     }
     
     &__input::placeholder {
-        @include text(var(--black-text), 12px, 700, 0.02em);
+        @include text(var(--black-text), .75rem, 700, 0.02em);
     }
     
     &__input:focus {
@@ -37,10 +37,10 @@
     &__submit {
         background-color: transparent;
         text-align: center;
-        padding: 12px 20px;
-        border: 2px solid #fff;
-        border-radius: 16px;
-        width: 125px;
-        @include text(var(--text), 12px, 500, 0.02em);
+        padding: .75rem 1.25rem;
+        border: .125rem solid #fff;
+        border-radius: 1rem;
+        width: 7.8125rem;
+        @include text(var(--text), .75rem, 500, 0.02em);
     }
 }

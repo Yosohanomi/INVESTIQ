@@ -2,9 +2,9 @@
 
 .button {
     background-color: transparent;
-    border: 2px solid #f5f6fb;
-    padding: 12px 24px;
-    border-radius: 16px;
-    @include text(var(--black-text), 12px, 700, 0.02em);
-    width: 125px;
+    border: .125rem solid #f5f6fb;
+    padding: .75rem 1.5rem;
+    border-radius: 1rem;
+    @include text(var(--black-text), .75rem, 700, 0.02em);
+    width: 7.8125rem;
 }

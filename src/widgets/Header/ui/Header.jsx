@@ -1,6 +1,7 @@
 import Container from '../../../shared/ui/Container/Container'
 import SVGIcon from '../../../assets/svg/symbol-defs.svg'
 import styles from './Header.module.scss'
+import { Link } from 'react-router'
 
 export default function Header() {
   return (
@@ -8,12 +9,12 @@ export default function Header() {
       <Container>
         <div className={styles.header__inner}>
             <div  className={styles.header__first__thumb}>
-                <a className={styles.logo} href="#">
+                <Link className={styles.logo} to="/">
                     <svg className={styles.logo__icon}>
                     <use href={`${SVGIcon}#icon-logo`} />
                     </svg>
                     <p className={styles.logo__text}>INVESTIQ</p>
-                </a>
+                </Link>
             
         </div>
             

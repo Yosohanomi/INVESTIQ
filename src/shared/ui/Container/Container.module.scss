@@ -1,21 +1,28 @@
 .container {
-    width: 282px;
-    padding: 0px 15px;
-    border: 1px solid red;
+    width: 17.625rem;
+    padding: 0rem .9375rem;
+    border: .0625rem solid red;
     margin: 0 auto;
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 47.99875em) {
     .container {
-        width: 665px;
-        padding: 0px 20px;
+        width: 41.5625rem;
+        padding: 0px 1.25rem;
     }
     
 }
 
-@media screen and (min-width: 1280px) {
+@media (min-width: 61.99875em) {
     .container {
-        width: 1060px;
+        width: 53.125rem;
+    }
+    
+}
+
+@media (min-width: 74.99875em) {
+    .container {
+        width: 66.25rem;
     }
     
 }

@@ -1,13 +1,13 @@
 .button {
   background-color: transparent;
-  border: 2px solid #f5f6fb;
-  padding: 12px 24px;
-  border-radius: 16px;
+  border: 0.125rem solid #f5f6fb;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
   color: var(--black-text);
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  width: 125px;
+  width: 7.8125rem;
 }/*# sourceMappingURL=GrayButton.module.css.map */
