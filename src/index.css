@@ -74,7 +74,7 @@ body {
   background-attachment: fixed, fixed; 
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 47.99875em) {
   body {
     margin: 0;
     font-family: var(--font-family);
@@ -99,7 +99,7 @@ body {
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 79.99875em) {
   body {
     margin: 0;
     font-family: var(--font-family);

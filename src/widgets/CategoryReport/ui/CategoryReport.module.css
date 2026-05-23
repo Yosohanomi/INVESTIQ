@@ -1,1 +1,16 @@
-/*# sourceMappingURL=CategoryReport.module.css.map */
+.categoryReport {
+  margin-bottom: 1.875rem;
+}
+.categoryReport > div {
+  background-color: var(--bg);
+  border-radius: 1.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4375rem 0;
+  box-shadow: 0 0.625rem 3.75rem 0 rgba(170, 178, 197, 0.2);
+}
+.categoryReport__header {
+  display: flex;
+}/*# sourceMappingURL=CategoryReport.module.css.map */

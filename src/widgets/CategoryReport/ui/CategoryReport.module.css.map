@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"CategoryReport.module.css"}
+{"version":3,"sources":["CategoryReport.module.scss","CategoryReport.module.css"],"names":[],"mappings":"AAAA;EAEI,uBAAA;ACAJ;ADCI;EACI,2BAAA;EACA,uBAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,uBAAA;EACA,oBAAA;EACA,yDAAA;ACCR;ADEI;EACI,aAAA;ACAR","file":"CategoryReport.module.css"}

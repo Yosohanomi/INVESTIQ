@@ -1,3 +1,9 @@
+.balance {
+  display: flex;
+  justify-content: center;
+  gap: 2.5625rem;
+  align-items: center;
+}
 .balance__text {
   color: var(--text);
   font-family: var(--font-family);

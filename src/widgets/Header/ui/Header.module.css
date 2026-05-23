@@ -102,7 +102,7 @@
     fill: #52555f;
   }
 }
-@media screen and (min-width: 768px) {
+@media (min-width: 47.99875em) {
   .header {
     position: relative;
     padding: 0.75rem;
@@ -148,13 +148,13 @@
     transition: all 0.5s var(--animation);
   }
 }
-@media screen and (min-width: 768px) and (any-hover: hover) {
+@media (min-width: 47.99875em) and (any-hover: hover) {
   .logout__text:hover,
   .logout__text:focus {
     text-decoration: underline;
   }
 }
-@media screen and (min-width: 768px) {
+@media (min-width: 47.99875em) {
   .logout__icon {
     display: none;
   }
