@@ -4,7 +4,8 @@
 .homepage {
     &__balance-section {
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-end;
+        gap: 10.875rem;
         align-items: center;
         margin-top: 2.5rem;
         margin-bottom: 3rem;

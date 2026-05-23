@@ -1,5 +1,9 @@
 @use '../../ui/styles/variables.scss' as *;
 .balance {
+    display: flex;
+    justify-content: center;
+    gap: 2.5625rem;
+    align-items: center;
     &__text {
         @include text(var(--text), .75rem, 500, 0.02em);
         text-transform: none;

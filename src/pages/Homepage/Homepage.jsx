@@ -14,20 +14,6 @@ export default function Homepage() {
       <Container>
         <div className={styles['homepage__balance-section']}>
           <Balance/>
-          {/* <p className={styles['homepage__balance-text']}>Баланс:</p>
-          <form className={styles['homepage__balance-form']}>
-            <input 
-              className={styles['homepage__balance-input']}
-              type="number" 
-              placeholder='0 UAH'
-            />
-            <button 
-              className={styles['homepage__balance-submit']}
-              type='button'
-            >
-              ПІДТВЕРДИТИ
-            </button>
-          </form> */}
           <Link to="/report" className={styles['homepage__calculate-link']}>
             <p className={styles['homepage__calculate-text']}>Перейти до звіту</p>
               <svg className={styles['homepage__calculate-icon']}>
