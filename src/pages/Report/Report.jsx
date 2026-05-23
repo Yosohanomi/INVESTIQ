@@ -24,9 +24,9 @@ export default function Report() {
             <svg className={styles['balance__back']}>
                 <use href={`${SVGIcon}#icon-small-arrow`}/>
             </svg>
-          <div>
+          <div className={styles['balance__calendar-thumb']}>
             <p className={styles['balance__current-period']}>Поточний період</p>
-            <p className={styles['balance__current-date']}>листопад 2019</p>
+            <p className={styles['balance__current-date']}>листопад <br/> 2019</p>
           </div>
           <svg className={styles['balance__forward']}>
             <use href={`${SVGIcon}#icon-small-arrow`}/>

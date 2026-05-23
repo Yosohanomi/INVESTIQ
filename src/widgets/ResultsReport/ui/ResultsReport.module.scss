@@ -1,0 +1,51 @@
+@use '../../../shared/ui/styles/variables.scss' as *;
+
+.resultsReport { 
+    margin-bottom: 1.875rem;
+    & > div {
+        background-color: var(--bg);
+        border-radius: 1.875rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .4375rem 0;
+        box-shadow: 0 .625rem 3.75rem 0 rgba(170, 178, 197, 0.2);
+    }
+    
+    &__expensesBlock {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: .0625rem solid #e0e5eb;
+        padding: .5rem 1.1875rem;
+        gap: .875rem;
+    }
+    
+    &__expensesLabel {
+        @include text(var(--dark-text), .875rem, 700, 0.04em);
+        text-transform: none;
+    }
+    
+    &__expensesAmount {
+        @include text(#e53935, .875rem, 700, 0.04em);
+        text-transform: none;
+    }
+    
+    &__incomeBlock {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .5rem 1.1875rem;
+        gap: .875rem;
+    }
+    
+    &__incomeLabel {
+        @include text(var(--dark-text), .875rem, 700, 0.04em);
+        text-transform: none;
+    }
+    
+    &__incomeAmount {
+        @include text(#407946, .875rem, 700, 0.04em);
+        text-transform: none;
+    }
+}

@@ -31,10 +31,12 @@ a {
     color: currentColor;
     text-decoration: none;
 }
-
-button {
-    cursor: pointer;
+@media (any-hover: hover) {
+    button:hover {
+        cursor: pointer;
+    }
 }
+
 
 img {
     display: block;
