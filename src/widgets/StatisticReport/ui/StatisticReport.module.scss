@@ -1,0 +1,83 @@
+@use '../../../shared/ui/styles/variables.scss' as *;
+
+.statisticReport {
+    & > div {
+        background-color: var(--bg);
+        border-radius: 1.875rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: .4375rem 0;
+        box-shadow: 0 .625rem 3.75rem 0 rgba(170, 178, 197, 0.2);
+    }
+    
+    &__chartWrapper {
+        position: relative;
+        padding: 1rem 0;
+    }
+    
+    &__grid {
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        pointer-events: none;
+        z-index: 1;
+
+    }
+    
+    &__gridLine {
+        width: 100%;
+        height: 0;
+        border-top: .125rem solid #f5f6fb;
+        
+    }
+    
+    &__chart {
+        display: flex;
+        align-items: flex-end;
+        gap: 1rem;
+        padding: 1rem 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        gap: 0.5rem;
+    }
+    
+    &__barWrapper {
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        height: 18.75rem; 
+    }
+    
+    &__bar {
+        width: 100%;
+        border-radius: .5rem .5rem 0 0;
+        transition: height 0.3s ease;
+    }
+    
+    &__value {
+        @include text(var(--dark-text), .75rem, 400, 0.02em);
+        text-transform: none;
+    }
+    
+    &__category {
+        @include text(var(--dark-text), .75rem, 400, 0.02em);
+        text-transform: none;
+    }
+}
