@@ -2,6 +2,8 @@ import Homepage from "../../pages/Homepage/Homepage";
 import MainLayout from "../layouts/MainLayout";
 import Report from "../../pages/Report/Report";
 import { frontRoutes } from "./frontRoutes/frontRoutes";
+import MobileExpenses from "../../pages/MobileExpenses/MobileExpenses";
+import MobileIncome from "../../pages/MobileIncome/MobileIncome";
 
 export const routes = [
     {
@@ -18,9 +20,25 @@ export const routes = [
             },
             {
                 element: <Report/>,
-                path: "report",
+                path: frontRoutes.report,
                 meta: {
                     name: "Report",
+                    inMenu:true
+                }
+            },
+            {
+                element: <MobileExpenses/>,
+                path: frontRoutes.expensesMobile,
+                meta: {
+                    name: "MobileExpenses",
+                    inMenu:true
+                }
+            },
+            {
+                element: <MobileIncome/>,
+                path: frontRoutes.incomeMobile,
+                meta: {
+                    name: "MobileIncome",
                     inMenu:true
                 }
             }
