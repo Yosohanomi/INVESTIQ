@@ -99,95 +99,100 @@ export default function Homepage() {
         </div>
 
         {/* MOBILE */}
-        <div>
-          <div className={styles["homepage__balance-section"]}>
-            <div className={styles["balance"]}>
-              <p className={styles["balance__text"]}>Баланс:</p>
-              <form className={styles["balance__form"]}>
+        
+        <div className={styles["homepage__mobileSection"]}>
+          <div className={styles["homepage__mobileBalanceSection"]}>
+          <Link to="/report" className={styles["homepage__mobileCalculateLink"]}>
+              <p className={styles["homepage__mobileCalculateText"]}>
+              Перейти до розрахунків
+              </p>
+              <svg className={styles["homepage__mobileCalculateIcon"]}>
+                <use href={`${SVGIcon}#icon-statistics`} />
+              </svg>
+            </Link>
+            <div className={styles["homepage__mobileBalance"]}>
+              <p className={styles["homepage__mobileBalanceText"]}>Баланс:</p>
+              <form className={styles["homepage__mobileBalanceForm"]}>
                 <input
-                  className={styles["balance__input"]}
+                  className={styles["homepage__mobileBalanceInput"]}
                   type="number"
                   placeholder="0 UAH"
                 />
-                <button className={styles["balance__submit"]} type="button">
+                <button className={styles["homepage__mobileBalanceSubmit"]} type="button">
                   ПІДТВЕРДИТИ
                 </button>
               </form>
             </div>
-            <Link to="/report" className={styles["homepage__calculate-link"]}>
-              <p className={styles["homepage__calculate-text"]}>
-                Перейти до звіту
-              </p>
-              <svg className={styles["homepage__calculate-icon"]}>
-                <use href={`${SVGIcon}#icon-statistics`} />
-              </svg>
-            </Link>
-            <button className={styles["homepage__date-button"]} type="button">
-              <svg className={styles["homepage__date-icon"]}>
+           
+            <button className={styles["homepage__mobileDateButton"]} type="button">
+              <svg className={styles["homepage__mobileDateIcon"]}>
                 <use href={`${SVGIcon}#icon-calendar`} />
               </svg>
               21.11.2019
             </button>
           </div>
-          <ul>
-            <li>
-              <div>
-                <h5>Метро</h5>
-                <div>
-                  <p>05.09.2019</p>
-                  <p>Транспорт</p>
+          
+          <ul className={styles["homepage__mobileTransactionList"]}>
+            <li className={styles["homepage__mobileTransactionItem"]}>
+              <div className={styles["homepage__mobileTransactionInfo"]}>
+                <h5 className={styles["homepage__mobileTransactionTitle"]}>Метро</h5>
+                <div className={styles["homepage__mobileTransactionDetails"]}>
+                  <p className={styles["homepage__mobileTransactionDate"]}>05.09.2019</p>
+                  <p className={styles["homepage__mobileTransactionCategory"]}>Транспорт</p>
                 </div>
               </div>
-              <p>- 30.00 грн.</p>
-              <button>
-                <svg>
+              <p className={`${styles.homepage__mobileTransactionAmount} ${styles.expense}`}>- 30.00 грн.</p>
+              <button className={styles["homepage__mobileDeleteButton"]}>
+                <svg className={styles["homepage__mobileDeleteIcon"]}>
                   <use href={`${SVGIcon}#icon-trashbin`} />
                 </svg>
               </button>
             </li>
 
-            <li>
-              <div>
-                <h5>Банани</h5>
-                <div>
-                  <p>05.09.2019</p>
-                  <p>Продукти</p>
+            <li className={styles["homepage__mobileTransactionItem"]}>
+              <div className={styles["homepage__mobileTransactionInfo"]}>
+                <h5 className={styles["homepage__mobileTransactionTitle"]}>Банани</h5>
+                <div className={styles["homepage__mobileTransactionDetails"]}>
+                  <p className={styles["homepage__mobileTransactionDate"]}>05.09.2019</p>
+                  <p className={styles["homepage__mobileTransactionCategory"]}>Продукти</p>
                 </div>
               </div>
-              <p>- 50.00 грн.</p>
-              <button>
-                <svg>
+              <p className={`${styles.homepage__mobileTransactionAmount} ${styles.expense}`}>- 50.00 грн.</p>
+              <button className={styles["homepage__mobileDeleteButton"]}>
+                <svg className={styles["homepage__mobileDeleteIcon"]}>
                   <use href={`${SVGIcon}#icon-trashbin`} />
                 </svg>
               </button>
             </li>
 
-            <li>
-              <div>
-                <h5>Моя зп</h5>
-                <div>
-                  <p>05.09.2019</p>
-                  <p>ЗП</p>
+            <li className={styles["homepage__mobileTransactionItem"]}>
+              <div className={styles["homepage__mobileTransactionInfo"]}>
+                <h5 className={styles["homepage__mobileTransactionTitle"]}>Моя зп</h5>
+                <div className={styles["homepage__mobileTransactionDetails"]}>
+                  <p className={styles["homepage__mobileTransactionDate"]}>05.09.2019</p>
+                  <p className={styles["homepage__mobileTransactionCategory"]}>ЗП</p>
                 </div>
               </div>
-              <p>20 000.00 грн.</p>
-              <button>
-                <svg>
+              <p className={`${styles.homepage__mobileTransactionAmount} ${styles.income}`}>20 000.00 грн.</p>
+              <button className={styles["homepage__mobileDeleteButton"]}>
+                <svg className={styles["homepage__mobileDeleteIcon"]}>
                   <use href={`${SVGIcon}#icon-trashbin`} />
                 </svg>
               </button>
             </li>
           </ul>
-          <div>
-            <Link to="/expensesMobile">
-              <button type="button">витрати</button>
+          
+          <div className={styles["homepage__mobileNavButtons"]}>
+            <Link to="/expensesMobile" className={styles["homepage__mobileNavLink"]}>
+              <button className={styles["homepage__mobileNavButton"]} type="button">витрати</button>
             </Link>
-            <Link to="/incomeMobile">
-              <button type="button">дохід</button>
+            <Link to="/incomeMobile" className={styles["homepage__mobileNavLink"]}>
+              <button className={styles["homepage__mobileNavButton"]} type="button">дохід</button>
             </Link>
           </div>
+          
         </div>
-      </Container>
+        </Container>
     </div>
   );
 }

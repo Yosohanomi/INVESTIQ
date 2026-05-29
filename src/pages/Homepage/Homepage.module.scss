@@ -1,170 +1,423 @@
 @use '../../shared/ui/styles/variables.scss' as *;
 
-
 .homepage {
     &__balance-section {
+        display: none;
+    }
+    &__transaction-controls {
+        display: none;
+    }
+    // MOBILE
+    &__mobileSection {
+        margin-top: 1.875rem;
+        display: block;
+    }
+    
+    &__mobileBalanceSection {
         display: flex;
-        justify-content: flex-end;
-        gap: 10.875rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    &__mobileBalance {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
         margin-top: 2.5rem;
-        margin-bottom: 3rem;
     }
     
+    &__mobileBalanceText {
+        margin-bottom: .375rem;
+        @include text(var(--text), .75rem, 500, 0.02em);
+        text-transform: none;
+    }
     
+    &__mobileBalanceForm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: .125rem solid #fff;
+        border-radius: 1.375rem;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
     
-    &__calculate-link {
+    &__mobileBalanceInput {
+        @include text(var(--black-text), .75rem, 700, 0.02em);
+        background: transparent;
+        border-right: .125rem solid #fff;
+        padding: 1.0625rem 0rem;
+        padding-left: 1.4375rem;
+        max-width: 7.8125rem;
+        text-align: center;
+
+        &::placeholder {
+            @include text(var(--black-text), .75rem, 700, 0.02em);
+        }
+    }
+    
+    &__mobileBalanceSubmit {
+        @include text(var(--text), .75rem, 400, 0.02em);
+        background: transparent;
+        padding-left: 1.0625rem;
+        max-width: 7.8125rem;
+        padding-right: 1.4375rem;
+        text-align: center;
+
+        
+    }
+
+    
+    &__mobileCalculateLink {
         display: flex;
         gap: .9375rem;
+        align-items: center;
+        justify-content: center;
     }
     
-    &__calculate-text {
+    &__mobileCalculateText {
         @include text(var(--text), .75rem, 400, 0.04em);
         text-transform: none;
     }
     
-    &__calculate-icon {
+    &__mobileCalculateIcon {
         fill: #52555f;
-        width: .875rem;
-        height: .875rem;
+            width: .875rem;
+            height: .875rem;
     }
     
-    &__transaction-controls {
+    &__mobileDateButton {
+        background-color: transparent;
+            @include text(var(--dark-text), .75rem, 900, 0.04em);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .625rem;
+            margin-top: 2.5rem;
     }
     
-    &__tab-button {
-        padding: .9375rem 2.625rem;
-        border-radius: 1.25rem 1.25rem 0 0;
-        background-color: #fafbfd;
-        width: 8.625rem;
+    &__mobileDateIcon {
+        width: 1.25rem;
+        height: 1.25rem;
+        fill: #52555f;
+    }
+    
+    &__mobileTransactionList {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3.875rem;
+    }
+    
+    &__mobileTransactionItem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: .75rem;
+        padding-top: .625rem;
+        border-bottom: 1px solid #f5f6fb;
+    }
+    
+    &__mobileTransactionInfo {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &__mobileTransactionTitle {
+        // заголовок (Метро, Банани, Моя зп)
+        @include text(var(--text), .75rem, 700, 0.04em);
+        text-transform: none;
+    }
+    
+    &__mobileTransactionDetails {
+        // обгортка з датою та категорією
+        display: flex;
+        gap: 1.25rem;
+    }
+    
+    &__mobileTransactionDate {
+        // дата транзакції
+        @include text(var(--dark-text), .5rem, 400, 0.04em);
+        text-transform: none;
+    }
+    
+    &__mobileTransactionCategory {
+        // категорія транзакції
+        @include text(var(--dark-text), .5rem, 400, 0.04em);
+        text-transform: none;
+    }
+    
+    &__mobileTransactionAmount {
+        // сума транзакції
+        @include text(var(--dark-text), .75rem, 900, 0.04em);
+    }
+
+
+    
+    &__mobileDeleteButton {
+        padding: 7px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
         transition: all 0.3s var(--animation);
-        @media (any-hover: hover) {
+        @media (any-hover) {
             &:hover,
             &:focus {
-                background-color: #fefefe;
+            border-radius: 100%;
+            background-color: #f5f6fb;
             }
         }
-        
-      
-      &--expense {
-      }
-      
-      &--income {
-      }
     }
     
-    &__tab-link {
-        @include text(var(--black-color), .75rem, 700, 0.02em);
+    &__mobileDeleteIcon {
+        width: 18px;
+        height: 18px;
+        fill: #52555f;
+    }
+    
+    &__mobileNavButtons {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        gap: .125rem;
+        
+    }
+    
+    &__mobileNavLink {
+        background: #f5f6fb;
+        width: 100%;
         transition: all 0.3s var(--animation);
     }
-
-    &__tab-button:hover &__tab-link,
-    &__tab-button:focus &__tab-link{
-        @include text(var(--red-color), .75rem, 700, 0.02em);
-    }
     
-    &__transaction-form {
-        border-radius: 0 1.875rem 1.875rem 1.875rem;
-        box-shadow: 0 .625rem 3.75rem 0 rgba(170, 178, 197, 0.2);
-        background: #fff;
-        padding: 0 1.25rem;
-    }
-
-    &__transaction-thumb {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 2.0625rem;
-        padding-bottom: 3.75rem;
-    }
-
-    &__input-thumb {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border: .125rem solid #f5f6fb;
-        border-radius: 1rem 1rem 1rem 0rem;
-    }
-    
-    &__date-button {
-        background-color: transparent;
-        @include text(var(--dark-text), .75rem, 900, 0.04em);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: .625rem;
-    }
-    
-    &__date-icon {
-        width: 1.25rem;
-        height: 1.25rem;
-        fill: #52555f;
-    }
-    
-    &__description-input {
-        @include text(var(--dark-text), .75rem, 400, 0.02em);
-        text-transform: none;
-        height: 2.5rem;
-        border-right: .125rem solid #f5f6fb;
-        padding-left: 1.25rem;
-    }
-    &__description-input:focus {
-        outline: none;
-    }
-    &__description-input::placeholder {
-        @include text(var(--light-text), .75rem, 400, 0.02em);
-        text-transform: none;
-    }
-    
-    &__category-select {
-        @include text(var(--light-text), .75rem, 400, 0.02em);
-        text-transform: none;
-        height: 2.5rem;
-        border-right: .125rem solid #f5f6fb;
-        padding-left: 1.25rem;
-        padding-right: 1.375rem;
-        appearance: none;
-    }
-    &__category-select:focus {
-        outline: none;
+    &__mobileNavButton {
+        background: #f5f6fb;
+        width: 9.9375rem;
+        height: 3.3125rem;
+        transition: all 0.3s var(--animation);
+        @include text(var(--black-text), .75rem, 700, 0.02em);
     }
 
     
-    &__amount-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 2.5rem;
-        padding-right: 1.25rem;
+        @media (any-hover) {
+            &__mobileNavLink:hover  &__mobileNavButton,
+            &__mobileNavLink:focus  &__mobileNavButton
+             {
+            background-color: var(--red-color);
+            color: #fff;
+            }
+        }
+
+        @media (any-hover) {
+            &__mobileNavLink:hover,
+            &__mobileNavLink:focus
+             {
+            background-color: var(--red-color);
+            }
+        }
+}
+
+.income {
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-align: right;
+    color: #407946;
+}
+
+.expense {
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-align: right;
+    color: #e7192e;
+}
+
+
+// tablet
+@media (min-width: 47.99875em) {
+
+    .homepage__mobileSection {
+        display: none;
     }
-    
-    &__amount-input {
-        @include text(var(--dark-text), .75rem, 400, 0.02em);
-        text-transform: none;
-        text-align: right;
+    .homepage {
+        &__balance-section {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10.875rem;
+            align-items: center;
+            margin-top: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        &__transaction-controls {
+            display: block;
+        }
         
-    }
-    &__amount-input:focus {
-        outline: none;
-    }
-    &__amount-input::placeholder {
-        @include text(var(--light-text), .75rem, 400, 0.02em);
-        text-transform: none;
         
-    }
-    
-    &__calculator-icon {
-        width: 1.25rem;
-        height: 1.25rem;
-        fill: #52555f;
         
-    }
+        &__calculate-link {
+            display: flex;
+            gap: .9375rem;
+        }
+        
+        &__calculate-text {
+            @include text(var(--text), .75rem, 400, 0.04em);
+            text-transform: none;
+        }
+        
+        &__calculate-icon {
+            fill: #52555f;
+            width: .875rem;
+            height: .875rem;
+        }
+        
+        &__transaction-controls {
+        }
+        
+        &__tab-button {
+            padding: .9375rem 2.625rem;
+            border-radius: 1.25rem 1.25rem 0 0;
+            background-color: #fafbfd;
+            width: 8.625rem;
+            transition: all 0.3s var(--animation);
+            @media (any-hover: hover) {
+                &:hover,
+                &:focus {
+                    background-color: #fefefe;
+                }
+            }
+            
+          
+          &--expense {
+          }
+          
+          &--income {
+          }
+        }
+        
+        &__tab-link {
+            @include text(var(--black-color), .75rem, 700, 0.02em);
+            transition: all 0.3s var(--animation);
+        }
     
-    &__action-buttons {
-        display: flex;
-        gap: .9375rem;
-    }
+        &__tab-button:hover &__tab-link,
+        &__tab-button:focus &__tab-link{
+            @include text(var(--red-color), .75rem, 700, 0.02em);
+        }
+        
+        &__transaction-form {
+            border-radius: 0 1.875rem 1.875rem 1.875rem;
+            box-shadow: 0 .625rem 3.75rem 0 rgba(170, 178, 197, 0.2);
+            background: #fff;
+            padding: 0 1.25rem;
+        }
     
-    &__income-table {
-    }
-  }
+        &__transaction-thumb {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2.0625rem;
+            padding-bottom: 3.75rem;
+        }
+    
+        &__input-thumb {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: .125rem solid #f5f6fb;
+            border-radius: 1rem 1rem 1rem 0rem;
+        }
+        
+        &__date-button {
+            background-color: transparent;
+            @include text(var(--dark-text), .75rem, 900, 0.04em);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .625rem;
+        }
+        
+        &__date-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            fill: #52555f;
+        }
+        
+        &__description-input {
+            @include text(var(--dark-text), .75rem, 400, 0.02em);
+            text-transform: none;
+            height: 2.5rem;
+            border-right: .125rem solid #f5f6fb;
+            padding-left: 1.25rem;
+        }
+        &__description-input:focus {
+            outline: none;
+        }
+        &__description-input::placeholder {
+            @include text(var(--light-text), .75rem, 400, 0.02em);
+            text-transform: none;
+        }
+        
+        &__category-select {
+            @include text(var(--light-text), .75rem, 400, 0.02em);
+            text-transform: none;
+            height: 2.5rem;
+            border-right: .125rem solid #f5f6fb;
+            padding-left: 1.25rem;
+            padding-right: 1.375rem;
+            appearance: none;
+        }
+        &__category-select:focus {
+            outline: none;
+        }
+    
+        
+        &__amount-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 2.5rem;
+            padding-right: 1.25rem;
+        }
+        
+        &__amount-input {
+            @include text(var(--dark-text), .75rem, 400, 0.02em);
+            text-transform: none;
+            text-align: right;
+            
+        }
+        &__amount-input:focus {
+            outline: none;
+        }
+        &__amount-input::placeholder {
+            @include text(var(--light-text), .75rem, 400, 0.02em);
+            text-transform: none;
+            
+        }
+        
+        &__calculator-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            fill: #52555f;
+            
+        }
+        
+        &__action-buttons {
+            display: flex;
+            gap: .9375rem;
+        }
+        
+        &__income-table {
+        }
+      }
+}
+
+@media (min-width: 79.9988rem) {
+    
+}
