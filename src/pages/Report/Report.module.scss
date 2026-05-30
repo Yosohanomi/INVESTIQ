@@ -4,22 +4,39 @@
     padding-top: 2.5rem;
     margin-bottom: 1.875rem;
     & > div {
+        padding-top: 2.5rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-direction: column;
+        gap: 1.875rem;
+        position: relative;
     }
     
     &__link {
         display: flex;
         align-items: center;
         gap: .9375rem;
-       
+        position: absolute;
+        top: 2.5625rem;
+        left: 1.375rem;
+    }
 
+    &__btn-mobile {
+        display: none;
+    }
+
+    &__enter {
+        display: none;
+    }
+
+    &__enter-mobile {
+        flex-direction: column;
+        gap: .5625rem;
     }
 
     &__text {
-        @include text(var(--text), .75rem, 400, 0.04em);
-        text-transform: none;
+        display: none;
     }
     &__return-icon {
         width: 1.5rem;
@@ -31,6 +48,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-top: 1.875rem;
+        
         &-thumb {
             display: flex;
             flex-direction: column;
@@ -55,5 +74,159 @@
     }
     &__current-date {
         @include text(var(--black-text), .75rem, 700, 0.02em);
+    }
+}
+
+@media (min-width: 47.99875em) { 
+
+    .balance {
+        padding-top: 2.5rem;
+        margin-bottom: 1.875rem;
+        & > div {
+            padding-top: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            position: static;
+        }
+        
+        &__link {
+            display: flex;
+            align-items: center;
+            gap: .9375rem;
+           position: static
+    
+        }
+
+        // &__btn-mobile {
+        //     display: block;
+        // }
+    
+        &__enter {
+            display: flex;
+        }
+
+        &__enter-mobile {
+            display: none;
+        }
+    
+        &__text {
+            display: block;
+            @include text(var(--text), .75rem, 400, 0.04em);
+            text-transform: none;
+        }
+        &__return-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: var(--red-color);
+        }
+    
+        &__calendar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &-thumb {
+                display: flex;
+                flex-direction: column;
+                gap: .25rem;
+                text-align: center;
+            }
+        }
+        &__back {
+            width: 1.25rem;
+            height: 1.25rem;
+            transform: rotate(180deg);
+            fill: var(--red-color);
+        }
+        &__forward {
+            width: 1.25rem;
+            height: 1.25rem;
+            fill: var(--red-color);
+        }
+        &__current-period {
+            @include text(var(--text), .75rem, 400, 0.04em);
+            text-transform: none
+        }
+        &__current-date {
+            @include text(var(--black-text), .75rem, 700, 0.02em);
+        }
+    }
+}
+
+@media (min-width: 79.99875em) { 
+
+    .balance {
+        padding-top: 2.5rem;
+        margin-bottom: 1.875rem;
+        & > div {
+            padding-top: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            position: static;
+        }
+        
+        &__link {
+            display: flex;
+            align-items: center;
+            gap: .9375rem;
+           position: static
+    
+        }
+
+        &__btn-mobile {
+            display: block;
+        }
+    
+        &__enter {
+            display: flex;
+        }
+
+        &__enter-mobile {
+            display: none;
+        }
+    
+        &__text {
+            display: block;
+            @include text(var(--text), .75rem, 400, 0.04em);
+            text-transform: none;
+        }
+        &__return-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: var(--red-color);
+        }
+    
+        &__calendar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &-thumb {
+                display: flex;
+                flex-direction: column;
+                gap: .25rem;
+                text-align: center;
+            }
+        }
+        &__back {
+            width: 1.25rem;
+            height: 1.25rem;
+            transform: rotate(180deg);
+            fill: var(--red-color);
+        }
+        &__forward {
+            width: 1.25rem;
+            height: 1.25rem;
+            fill: var(--red-color);
+        }
+        &__current-period {
+            @include text(var(--text), .75rem, 400, 0.04em);
+            text-transform: none
+        }
+        &__current-date {
+            @include text(var(--black-text), .75rem, 700, 0.02em);
+        }
     }
 }

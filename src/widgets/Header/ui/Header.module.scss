@@ -2,6 +2,11 @@
 
 .header {
     background-color: var(--bg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .header__inner {
@@ -106,7 +111,7 @@
 
 @media (min-width: 47.99875em) {
     .header {
-        position: relative;
+        // position: relative;
         padding: .75rem;
     }
     

@@ -1,6 +1,7 @@
 @use '../../shared/ui/styles/variables.scss' as *;
 
 .homepage {
+    
     &__balance-section {
         display: none;
     }
@@ -246,108 +247,27 @@
         display: none;
     }
     .homepage {
-        &__balance-section {
-            display: flex;
-            justify-content: flex-end;
-            gap: 10.875rem;
-            align-items: center;
-            margin-top: 2.5rem;
-            margin-bottom: 3rem;
-        }
 
-        &__transaction-controls {
-            display: block;
-        }
-        
-        
-        
-        &__calculate-link {
-            display: flex;
-            gap: .9375rem;
-        }
-        
-        &__calculate-text {
-            @include text(var(--text), .75rem, 400, 0.04em);
-            text-transform: none;
-        }
-        
-        &__calculate-icon {
-            fill: #52555f;
-            width: .875rem;
-            height: .875rem;
-        }
-        
-        &__transaction-controls {
-        }
-        
-        &__tab-button {
-            padding: .9375rem 2.625rem;
-            border-radius: 1.25rem 1.25rem 0 0;
-            background-color: #fafbfd;
-            width: 8.625rem;
-            transition: all 0.3s var(--animation);
-            @media (any-hover: hover) {
-                &:hover,
-                &:focus {
-                    background-color: #fefefe;
-                }
-            }
-            
-          
-          &--expense {
-          }
-          
-          &--income {
-          }
-        }
-        
-        &__tab-link {
-            @include text(var(--black-color), .75rem, 700, 0.02em);
-            transition: all 0.3s var(--animation);
-        }
-    
-        &__tab-button:hover &__tab-link,
-        &__tab-button:focus &__tab-link{
-            @include text(var(--red-color), .75rem, 700, 0.02em);
-        }
         
         &__transaction-form {
             border-radius: 0 1.875rem 1.875rem 1.875rem;
             box-shadow: 0 .625rem 3.75rem 0 rgba(170, 178, 197, 0.2);
             background: #fff;
             padding: 0 1.25rem;
+            
         }
     
         &__transaction-thumb {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 2.0625rem;
-            padding-bottom: 3.75rem;
-        }
-    
-        &__input-thumb {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: .125rem solid #f5f6fb;
-            border-radius: 1rem 1rem 1rem 0rem;
-        }
-        
-        &__date-button {
-            background-color: transparent;
-            @include text(var(--dark-text), .75rem, 900, 0.04em);
-            display: flex;
             justify-content: center;
             align-items: center;
-            gap: .625rem;
+            flex-direction: row;
+            padding-top: 2.0625rem;
+            padding-bottom: 3.75rem;
+            flex-wrap: wrap;
+            gap: 1.875rem;
         }
-        
-        &__date-icon {
-            width: 1.25rem;
-            height: 1.25rem;
-            fill: #52555f;
-        }
+    
         
         &__description-input {
             @include text(var(--dark-text), .75rem, 400, 0.02em);
@@ -383,38 +303,19 @@
             align-items: center;
             justify-content: center;
             height: 2.5rem;
-            padding-right: 1.25rem;
+            max-width: 6.5rem;
+            position: relative;
         }
         
-        &__amount-input {
-            @include text(var(--dark-text), .75rem, 400, 0.02em);
-            text-transform: none;
-            text-align: right;
-            
-        }
-        &__amount-input:focus {
-            outline: none;
-        }
-        &__amount-input::placeholder {
-            @include text(var(--light-text), .75rem, 400, 0.02em);
-            text-transform: none;
-            
-        }
         
         &__calculator-icon {
+            position: absolute;
             width: 1.25rem;
             height: 1.25rem;
             fill: #52555f;
-            
+            right: 1.25rem;
         }
         
-        &__action-buttons {
-            display: flex;
-            gap: .9375rem;
-        }
-        
-        &__income-table {
-        }
       }
 }
 

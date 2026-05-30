@@ -35,7 +35,7 @@
     
     &__header-cell {
       @include text(var(--black-text), 12px, 700, 0.02em);
-      padding: 16px 20px;
+      padding: 1rem 1.25rem;
 
       white-space: nowrap;
   
@@ -50,28 +50,28 @@
     }
     
     &__row {
-      border-bottom: 2px solid #f5f6fb;
+      border-bottom: .125rem solid #f5f6fb;
       
     }
     
     &__cell {
-      border-bottom: 2px solid #f5f6fb;
-      @include text(var(--dark-text), 12px, 400, 0.04em);
-      padding: 16px 20px;
+      border-bottom: .125rem solid #f5f6fb;
+      @include text(var(--dark-text), .75rem, 400, 0.04em);
+      padding: 1rem 1.25rem;
     }
     
     &__amount-wrapper {
       display: flex;
       
       justify-content: center;align-items: center;
-      gap: 50px;
+      gap: 3.125rem;
     }
     
     &__amount {
     }
     
     &__delete-button {
-      padding: 7px;
+      padding: .4375rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -86,8 +86,8 @@
     }
     
     &__delete-icon {
-      width: 18px;
-      height: 18px;
+      width: 1.125rem;
+      height: 1.125rem;
       fill: #52555f;
     }
     
@@ -98,20 +98,20 @@
       align-items: center;
       text-align: left;
       background-color: #f5f6fb;
-      width: 230px;
+      width: 14.375rem;
 
       overflow: hidden;
       border: 
-      5px solid #fefefe;
-      border-radius: 16px 16px 0 0;
+      .3125rem solid #fefefe;
+      border-radius: 1rem 1rem 0 0;
     }
     
     &__summary-title {
-      @include text(var(--black-text), 12px, 700, 0.02em);
-      border-bottom: 2px solid #fefefe;
+      @include text(var(--black-text), .75rem, 700, 0.02em);
+      border-bottom: .125rem solid #fefefe;
       text-align: center;
       width: 100%;
-      padding: 15px 20px;
+      padding: .9375rem 1.25rem;
     }
     
     &__summary-list {
@@ -119,21 +119,28 @@
     
     &__summary-item {
       display: flex;
-      padding: 15px 20px;
+      padding: .9375rem 1.25rem;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      border-bottom: 2px solid #fefefe;
+      gap: 1.25rem;
+      border-bottom: .125rem solid #fefefe;
     }
     
     &__summary-month {
-      @include text(var(--dark-text), 12px, 400, 0.04em);
+      @include text(var(--dark-text), .75rem, 400, 0.04em);
       text-align: left;
     }
     
     &__summary-amount {
-      @include text(var(--dark-text), 12px, 400, 0.04em);
+      @include text(var(--dark-text), .75rem, 400, 0.04em);
       text-align: right;
     }
   }
 
+  @media (min-width: 47.99875em) {
+    .income-table {
+      gap: 40px;
+      flex-direction: column;
+  
+  }
+  }

@@ -19,7 +19,7 @@ export default function Report() {
         <p className={styles['balance__text']}>Повернутись на головну</p>
         
         </Link>
-        <Balance/>
+        <Balance sp_class={styles['balance__btn-mobile']} balanceClass={styles['balance__enter']}/>
         <div className={styles['balance__calendar']}>
             <svg className={styles['balance__back']}>
                 <use href={`${SVGIcon}#icon-small-arrow`}/>
@@ -32,6 +32,7 @@ export default function Report() {
             <use href={`${SVGIcon}#icon-small-arrow`}/>
           </svg>
         </div>
+        <Balance sp_class={styles['balance__btn-mobile']} balanceClass={styles['balance__enter-mobile']}/>
       </Container>
       
     </div>
