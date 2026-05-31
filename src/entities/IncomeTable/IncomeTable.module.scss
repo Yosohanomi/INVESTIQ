@@ -30,8 +30,6 @@
       background-color: #f5f6fb;
     }
     
-    &__header-row {
-    }
     
     &__header-cell {
       @include text(var(--black-text), 12px, 700, 0.02em);
@@ -45,9 +43,6 @@
       background-color: #f5f6fb;
     }
     
-    &__body {
-      
-    }
     
     &__row {
       border-bottom: .125rem solid #f5f6fb;
@@ -66,10 +61,7 @@
       justify-content: center;align-items: center;
       gap: 3.125rem;
     }
-    
-    &__amount {
-    }
-    
+
     &__delete-button {
       padding: .4375rem;
       display: flex;
@@ -114,9 +106,7 @@
       padding: .9375rem 1.25rem;
     }
     
-    &__summary-list {
-    }
-    
+
     &__summary-item {
       display: flex;
       padding: .9375rem 1.25rem;
@@ -135,7 +125,8 @@
       @include text(var(--dark-text), .75rem, 400, 0.04em);
       text-align: right;
     }
-  }
+}
+
 
   @media (min-width: 47.99875em) {
     .income-table {
@@ -144,3 +135,9 @@
   
   }
   }
+
+  @media (min-width: 79.9988em) {
+    .income-table {
+      flex-direction: row;}
+  }
+
