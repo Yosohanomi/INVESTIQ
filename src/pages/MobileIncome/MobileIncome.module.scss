@@ -1,7 +1,7 @@
 @use '../../shared/ui/styles/variables.scss' as *;
 
 .mobileIncome {
-    
+    padding-top: 3.75rem;
     
     &__backIcon {
         width: 1.5rem;
@@ -40,6 +40,9 @@
     }
     
     &__amountWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin-top: 1.875rem;
         margin-bottom: 5.1875rem;
         border: .125rem solid #fff;
@@ -52,7 +55,7 @@
         @include text(var(--black-text), .75rem, 700, 0.02em);
         border-right: .125rem solid #fff;
         height: 2.75rem;
-        text-align: right;
+        text-align: center;
         
         &::placeholder {
             @include text(var(--black-text), .75rem, 700, 0.02em);
@@ -60,6 +63,7 @@
     }
     
     &__calculatorIcon {
+        margin-left: 1.3125rem;
         width: 1.25rem;
         height: 1.25rem;
     }

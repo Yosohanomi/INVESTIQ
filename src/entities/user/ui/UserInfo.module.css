@@ -1,0 +1,45 @@
+.user {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user__avatar {
+  color: var(--dark-text);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 100%;
+  background-color: #f5f6fa;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user__name {
+  display: none;
+}
+
+@media (min-width: 47.99875em) {
+  .user {
+    gap: 0.625rem;
+    border-right: 0.0625rem solid #e0e5eb;
+    padding-right: 1.25rem;
+  }
+  .user__name {
+    display: block;
+    color: var(--dark-text);
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-transform: none;
+  }
+}/*# sourceMappingURL=UserInfo.module.css.map */

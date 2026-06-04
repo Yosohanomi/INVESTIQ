@@ -5,7 +5,7 @@
   display: none;
 }
 .homepage__mobileSection {
-  margin-top: 1.875rem;
+  margin-top: 5.8125rem;
   display: block;
 }
 .homepage__mobileBalanceSection {
@@ -256,6 +256,15 @@
   .homepage__mobileSection {
     display: none;
   }
+  .homepage {
+    margin-top: 2.5rem;
+  }
+  .homepage__balance-section {
+    display: block;
+  }
+  .homepage__transaction-controls {
+    display: block;
+  }
   .homepage__balance-section {
     display: flex;
     justify-content: flex-end;
@@ -263,9 +272,6 @@
     align-items: center;
     margin-top: 2.5rem;
     margin-bottom: 3rem;
-  }
-  .homepage__transaction-controls {
-    display: block;
   }
   .homepage__calculate-link {
     display: flex;
@@ -282,8 +288,8 @@
   }
   .homepage__calculate-icon {
     fill: #52555f;
-    width: 0.875rem;
-    height: 0.875rem;
+    width: 1.5rem;
+    height: 1.5rem;
   }
   .homepage__tab-button {
     padding: 0.9375rem 2.625rem;
@@ -324,10 +330,13 @@
   }
   .homepage__transaction-thumb {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-direction: row;
     padding-top: 2.0625rem;
     padding-bottom: 3.75rem;
+    flex-wrap: wrap;
+    gap: 1.875rem;
   }
   .homepage__input-thumb {
     display: flex;
@@ -411,7 +420,8 @@
     align-items: center;
     justify-content: center;
     height: 2.5rem;
-    padding-right: 1.25rem;
+    max-width: 6.5rem;
+    position: relative;
   }
   .homepage__amount-input {
     color: var(--dark-text);
@@ -421,7 +431,7 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     text-transform: none;
-    text-align: right;
+    text-align: center;
   }
   .homepage__amount-input:focus {
     outline: none;
@@ -445,9 +455,36 @@
     text-transform: none;
   }
   .homepage__calculator-icon {
+    position: absolute;
     width: 1.25rem;
     height: 1.25rem;
     fill: #52555f;
+    right: 1.25rem;
+  }
+  .homepage__action-buttons {
+    display: flex;
+    gap: 0.9375rem;
+  }
+}
+@media (min-width: 79.9988rem) {
+  .homepage__calculate-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+  .homepage__transaction-thumb {
+    justify-content: space-between;
+  }
+  .homepage__amount-container {
+    max-width: -moz-max-content;
+    max-width: max-content;
+    position: static;
+    padding-right: 1.25rem;
+  }
+  .homepage__amount-input {
+    text-align: right;
+  }
+  .homepage__calculator-icon {
+    position: static;
   }
   .homepage__action-buttons {
     display: flex;

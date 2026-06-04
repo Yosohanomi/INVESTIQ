@@ -2,6 +2,7 @@ import Container from '../../../shared/ui/Container/Container'
 import SVGIcon from '../../../assets/svg/symbol-defs.svg'
 import styles from './Header.module.scss'
 import { Link } from 'react-router'
+import UserInfo from '../../../entities/user/ui/UserInfo'
 
 export default function Header() {
   return (
@@ -19,10 +20,11 @@ export default function Header() {
         </div>
             
         <div className={styles.header__second__thumb}>
-            <div className={styles.user}>
+            {/* <div className={styles.user}>
                 <div className={styles.user__avatar}>U</div>
                 <p className={styles.user__name}>User Name</p>
-            </div>
+            </div> */}
+            <UserInfo/>
 
             <a href='#' className={styles.logout}>
                 <p className={styles.logout__text}>Вийти</p>

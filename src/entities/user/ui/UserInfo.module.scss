@@ -1,0 +1,41 @@
+@use '../../../shared/ui/styles/variables.scss' as *;
+
+.user {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user__avatar {
+    @include text(var(--dark-text), .75rem, 700, 0.05em);
+    border-radius: 100%;
+    background-color: #f5f6fa;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user__name {
+    display: none;
+}
+
+// tablet
+
+@media (min-width: 47.99875em) {
+    .user {
+        gap: .625rem;
+        border-right: .0625rem solid #e0e5eb;
+        padding-right: 1.25rem;
+    }
+    
+    .user__name {
+        display: block;
+        @include text(var(--dark-text), .75rem, 400, 0.04em);
+        text-transform:none;
+    }
+
+}
