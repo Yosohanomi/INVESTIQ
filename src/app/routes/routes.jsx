@@ -4,6 +4,9 @@ import Report from "../../pages/Report/Report";
 import { frontRoutes } from "./frontRoutes/frontRoutes";
 import MobileExpenses from "../../pages/MobileExpenses/MobileExpenses";
 import MobileIncome from "../../pages/MobileIncome/MobileIncome";
+import LoginLayout from "../layouts/LoginLayout";
+import Login from "../../features/Login/ui/Login";
+import Register from "../../features/Register/ui/Register";
 
 export const routes = [
     {
@@ -41,6 +44,19 @@ export const routes = [
                     name: "MobileIncome",
                     inMenu:true
                 }
+            },
+            {
+                path: "/login",
+                element: <LoginLayout/>,
+                children: [
+                    {
+                        index: true,
+                        element: <Login/>,
+                        meta: {
+                            isInMenu: false,
+                        }
+                    }
+                ]
             }
         ]
     }

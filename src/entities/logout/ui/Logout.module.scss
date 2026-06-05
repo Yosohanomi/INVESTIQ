@@ -1,0 +1,54 @@
+@use '../../../shared/ui/styles/variables.scss' as *;
+
+.logout {
+    transition: all 0.5s var(--animation);
+}
+
+@media (any-hover: hover) {
+    .logout:hover,
+    .logout:focus {
+        fill: #52555f;
+        color: var(--dark-text);
+    }
+}
+
+
+.logout__text {
+    display: none;
+}
+
+.logout__icon {
+    fill: #cbccd0;
+    width: 1rem;
+    height: 1rem;
+    transition: all 0.4s var(--animation);
+}
+
+@media (any-hover: hover) {
+    .logout:hover .logout__icon,
+    .logout:focus .logout__icon {
+        fill: #52555f;
+}
+}
+
+
+
+@media (min-width: 47.99875em) {
+    
+    .logout__text {
+        display: block;
+        @include text(var(--dark-text), .75rem, 400, 0.04em);
+        text-transform:none;
+        transition: all 0.5s var(--animation);          
+    }
+    @media (any-hover: hover) {
+        .logout__text:hover,
+        .logout__text:focus {
+            text-decoration: underline; 
+        }
+    }
+
+    .logout__icon {
+        display: none;
+    }
+}

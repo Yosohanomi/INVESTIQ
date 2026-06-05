@@ -1,0 +1,48 @@
+@use '../../../shared/ui/styles/variables.scss' as *;
+
+.section {}
+.content {}
+.title {
+    @include text(var(--black-text), 4rem, 900, 0.02em);
+    text-transform: none;
+    margin-left: 1.8125rem;
+}
+.subtitle {
+    @include text(var(--black-text), .8125rem, 700, 0.15em);
+    margin-left: 3.125rem;
+}
+
+
+@media (min-width: 47.99875em) {
+    .section {}
+    .content {}
+    .title {
+        @include text(var(--black-text), 6.375rem, 900, 0.02em);
+        text-transform: none;
+        margin-left: 0;
+    }
+    .subtitle {
+        @include text(var(--black-text), 1rem, 700, 0.18em);
+        margin-left: 3.625rem;
+    }
+  }
+
+  @media (min-width: 79.9988em) {
+    .section > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 7.4375rem;
+        padding: 6.4375rem 0;
+    }
+    .content {}
+    .title {
+        @include text(var(--black-text), 6.375rem, 900, 0.02em);
+        text-transform: none;
+        margin-left: 1.8125rem;
+    }
+    .subtitle {
+        @include text(var(--black-text), 1rem, 700, 0.18em);
+        margin-left: 3.125rem;
+    }
+  }

@@ -4,11 +4,11 @@
     display: flex;
     justify-content: center;
     align-items: start;
-    gap: 30px;
-    padding-bottom: 62px;
+    gap: 1.875rem;
+    padding-bottom: 3.875rem;
     &__thumb{
-      border: 2px solid #f5f6fb;
-      border-radius: 16px 16px 0 0;
+      border: .125rem solid #f5f6fb;
+      border-radius: 1rem 1rem 0 0;
       overflow: hidden;
       border-collapse: collapse;
       overflow-y: scroll;
@@ -21,7 +21,7 @@
 
     &__table {
       width: 100%;
-      max-height: 382px;
+      max-height: 23.875rem;
       border-collapse: collapse;
       table-layout: fixed;
     }
@@ -32,7 +32,7 @@
     
     
     &__header-cell {
-      @include text(var(--black-text), 12px, 700, 0.02em);
+      @include text(var(--black-text), .75rem, 700, 0.02em);
       padding: 1rem 1.25rem;
 
       white-space: nowrap;
@@ -130,9 +130,9 @@
 
   @media (min-width: 47.99875em) {
     .income-table {
-      gap: 40px;
+      gap: 2.5rem;
       flex-direction: column;
-  
+
   }
   }
 
