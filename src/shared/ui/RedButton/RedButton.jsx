@@ -1,6 +1,6 @@
 import styles from './RedButton.module.scss'
-export const RedButton = ({text, secondClass}) => {
+export const RedButton = ({text, secondClass, type}) => {
   return (
-    <button className={`${styles.button} ${secondClass}`}>{text}</button>
+    <button type={type} className={`${styles.button} ${secondClass}`}>{text}</button>
   )
 }

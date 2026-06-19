@@ -3,5 +3,8 @@ export const frontRoutes = {
     expensesMobile: "/expensesMobile",
     incomeMobile: "/incomeMobile",
     report: "/report",
+    login: "/login",
+    register: "/register",
+    forbidden: "/forbidden"
     // page404: "*" 
 }
