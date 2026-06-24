@@ -90,7 +90,9 @@ export const logout = createAsyncThunk(
     "users/logout",
     async (_, { rejectWithValue }) => {
         try {
+            
             await authApi.post(beckendRoutes.logoutRoute);
+            document.cookie = 'refreshToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
             return;
         } catch (error) {
             return rejectWithValue(error?.response?.data);
