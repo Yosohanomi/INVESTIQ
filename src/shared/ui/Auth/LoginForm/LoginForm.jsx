@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { login } from '../../../../features/Login/model/authThunks/authThunks';
+import { frontRoutes } from '../../../../app/routes/frontRoutes/frontRoutes';
 
 
 export default function LoginForm() {
@@ -55,8 +56,8 @@ export default function LoginForm() {
         />
         
         <div className={styles.buttonsThumb}>
-          <RedButton type="submit" secondClass={styles.redBtn} text="увійти"/>
-          <button className={styles.registerButton}>реєстрація</button>
+          <RedButton onClick={() => navigate(frontRoutes.login)}  type="submit" secondClass={styles.redBtn} text="увійти"/>
+          <button onClick={() => navigate(frontRoutes.register)} className={styles.registerButton}>реєстрація</button>
         </div>
       </div>
     </form>

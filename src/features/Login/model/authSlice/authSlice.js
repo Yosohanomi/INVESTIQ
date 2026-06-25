@@ -1,104 +1,5 @@
-// import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-
-// import { appRoles } from "../../../../app/roles/appRoles";
-// import { login, logout, refresh } from "../authThunks/authThunks";
-
-// const authSlice = createSlice({
-//     name: "users/auth",
-//     initialState: {
-//         user: null,
-//         accessToken: null,
-//         role: null,
-//         loading: false,
-//         isError: false,
-//         isInit: false,
-//     },
-//     reducers: {},
-//     extraReducers: (builder) => {
-//         builder
-//             .addCase(login.fulfilled, (state, action) => {
-//                 state.loading = false;
-
-//                 state.user = action.payload.user?.email; 
-//                 state.accessToken = action.payload.accessToken;
-//                 state.role = action.payload.user?.role; 
-//                 state.isInit = true;
-//                 state.isError = false;
-//             })
-//             .addCase(refresh.fulfilled, (state, action) => {
-//                 state.loading = false;
-//                 state.accessToken = action.payload.accessToken;
-//                 state.user = action.payload.user?.email;
-//                 state.role = action.payload.user?.role;
-//                 state.isInit = true;
-//                 state.isError = false;
-//             })
-//             .addCase(logout.fulfilled, (state) => {
-//                 state.user = null;
-//                 state.role = null;
-//                 state.loading = false;
-//                 state.accessToken = null;
-//                 state.isInit = false;
-//                 state.isError = false;
-//             })
-
-//             .addMatcher(isAnyOf(login.pending, refresh.pending, logout.pending), (state) => {
-//                 state.loading = true;
-//                 state.isError = false;
-//             })
-
-//             .addMatcher(isAnyOf(login.rejected, refresh.rejected, logout.rejected), (state, action) => {
-//                 state.loading = false;
-//                 state.isError = action.error?.message || "An error occurred";
-//             });
-//     }
-// });
-
-// export default authSlice.reducer;
-
-import { createSlice, createAsyncThunk, isAnyOf } from "@reduxjs/toolkit";
-import { authApi } from "../../../../shared/axiosAuth/axiosAuth";
-import { beckendRoutes } from "../../../../app/routes/beckendRoutes/beckendRoutes";
-import { appRoles } from "../../../../app/roles/appRoles";
-
-export const login = createAsyncThunk(
-    "users/login",
-    async (credentials, { rejectWithValue }) => {
-        try {
-            const response = await authApi.post(beckendRoutes.loginRoute, credentials);
-            return response.data;
-        } catch (error) {
-            console.log(error);
-            return rejectWithValue(error?.response?.data);
-        }
-    }
-);
-
-export const refresh = createAsyncThunk(
-    "users/refresh",
-    async (_, { rejectWithValue }) => {
-        try {
-            const response = await authApi.post(beckendRoutes.refreshRouta);
-            return response.data;
-        } catch (error) {
-            return rejectWithValue(error?.response?.data);
-        }
-    }
-);
-
-export const logout = createAsyncThunk(
-    "users/logout",
-    async (_, { rejectWithValue }) => {
-        try {
-            
-            await authApi.post(beckendRoutes.logoutRoute);
-            document.cookie = 'refreshToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-            return;
-        } catch (error) {
-            return rejectWithValue(error?.response?.data);
-        }
-    }
-);
+import { createSlice, isAnyOf } from "@reduxjs/toolkit";
+import { login, logout, refresh, register } from "../authThunks/authThunks";
 
 const authSlice = createSlice({
     name: "users/auth",
@@ -109,17 +10,28 @@ const authSlice = createSlice({
         loading: false,
         isError: false,
         isInit: false,
+        registerSuccess: false,
+        userName: null,
     },
-    reducers: {},
+    reducers: {
+        resetRegisterStatus: (state) => {
+            state.registerSuccess = false;
+            state.isError = false;
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(login.fulfilled, (state, action) => {
                 state.loading = false;
                 state.user = action.payload.user?.email;
+                state.userName = action.payload.user?.name || action.payload.user?.fullName; // Додаємо
                 state.accessToken = action.payload.accessToken;
                 state.role = action.payload.user?.role;
                 state.isInit = true;
                 state.isError = false;
+                
+                localStorage.setItem('accessToken', action.payload.accessToken);
+                localStorage.setItem('user', JSON.stringify(action.payload.user));
             })
             .addCase(refresh.fulfilled, (state, action) => {
                 state.loading = false;
@@ -136,6 +48,22 @@ const authSlice = createSlice({
                 state.accessToken = null;
                 state.isInit = false;
                 state.isError = false;
+                state.registerSuccess = false;
+            })
+            .addCase(register.fulfilled, (state, action) => {
+                state.loading = false;
+                state.registerSuccess = true;
+                state.isError = false;
+            })
+            .addCase(register.pending, (state) => {
+                state.loading = true;
+                state.isError = false;
+                state.registerSuccess = false;
+            })
+            .addCase(register.rejected, (state, action) => {
+                state.loading = false;
+                state.isError = action.payload?.message || "Помилка реєстрації";
+                state.registerSuccess = false;
             })
             .addMatcher(isAnyOf(login.pending, refresh.pending, logout.pending), (state) => {
                 state.loading = true;
@@ -148,4 +76,6 @@ const authSlice = createSlice({
     }
 });
 
+export const { resetRegisterStatus } = authSlice.actions;
 export default authSlice.reducer;
+export { login, refresh, logout, register };

@@ -20,19 +20,9 @@ export default function Header({children}) {
         </div>
             
         <div className={styles.header__second__thumb}>
-            {/* <div className={styles.user}>
-                <div className={styles.user__avatar}>U</div>
-                <p className={styles.user__name}>User Name</p>
-            </div> */}
-            {/* <UserInfo/> */}
+
             {children}
 
-            {/* <a href='#' className={styles.logout}>
-                <p className={styles.logout__text}>Вийти</p>
-                <svg fill="currentColor" className={`${styles.logout__icon} ${styles.isHidden}`}>
-                <use href={`${SVGIcon}#icon-logout`} />
-                </svg>а 
-            </a> */}
         </div>
           
         </div>

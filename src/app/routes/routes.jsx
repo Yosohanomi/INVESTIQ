@@ -100,6 +100,19 @@ export const routes = [
           },
         ],
       },
+      {
+        path: frontRoutes.register,
+        element: <LoginLayout />,
+        children: [
+            {
+                index: true,
+                element: <Register />,
+                meta: {
+                    isInMenu: false,
+                },
+            },
+        ],
+    },
     ],
   },
 ];

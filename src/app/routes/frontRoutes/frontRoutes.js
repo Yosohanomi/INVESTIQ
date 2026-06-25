@@ -4,7 +4,7 @@ export const frontRoutes = {
     incomeMobile: "/incomeMobile",
     report: "/report",
     login: "/login",
-    register: "/register",
+    register: '/register',
     forbidden: "/forbidden"
     // page404: "*" 
 }

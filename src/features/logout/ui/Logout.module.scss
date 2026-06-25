@@ -1,6 +1,7 @@
 @use '../../../shared/ui/styles/variables.scss' as *;
 
 .logout {
+    background-color: transparent;
     transition: all 0.5s var(--animation);
 }
 

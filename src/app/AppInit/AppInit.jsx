@@ -13,7 +13,7 @@ export default function AppInit({children}) {
             try {
                 await dispatch(refresh()).unwrap();
                 if (location.pathname === "/") {
-                    navigate("/home")
+                    navigate(location.pathname)
                 }
             } catch {
                 navigate("/login")
