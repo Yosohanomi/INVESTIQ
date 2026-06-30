@@ -5,6 +5,29 @@ export default function ExpensesTable({ transactions = [], onDelete, loading }) 
   if (loading) {
     return <div className={styles.loading}>Завантаження...</div>;
   }
+  const getMonthlySummary = () => {
+    const months = {};
+    
+    transactions.forEach(item => {
+      const date = new Date(item.date);
+      const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+      const monthName = date.toLocaleDateString('uk-UA', { month: 'long', year: 'numeric' });
+      
+      if (!months[monthKey]) {
+        months[monthKey] = {
+          name: monthName,
+          total: 0
+        };
+      }
+      months[monthKey].total += item.amount;
+    });
+    
+    return Object.keys(months)
+      .sort((a, b) => b.localeCompare(a))
+      .map(key => months[key]);
+  };
+
+  const monthlySummary = getMonthlySummary();
 
   return (
     <div className={styles['expenses-table']}>
@@ -55,35 +78,23 @@ export default function ExpensesTable({ transactions = [], onDelete, loading }) 
         </table>
       </div>
       
-      <div className={styles['expenses-table__summary']}>
-        <h4 className={styles['expenses-table__summary-title']}>Зведення</h4>
-        <ul className={styles['expenses-table__summary-list']}>
-          <li className={styles['expenses-table__summary-item']}>
-            <p className={styles['expenses-table__summary-month']}>ЛИСТОПАД</p>
-            <p className={styles['expenses-table__summary-amount']}>25 500.00</p>
-          </li>
-          <li className={styles['expenses-table__summary-item']}>
-            <p className={styles['expenses-table__summary-month']}>ЖОВТЕНЬ</p>
-            <p className={styles['expenses-table__summary-amount']}>25 500.00</p>
-          </li>
-          <li className={styles['expenses-table__summary-item']}>
-            <p className={styles['expenses-table__summary-month']}>ВЕРЕСЕНЬ</p>
-            <p className={styles['expenses-table__summary-amount']}>25 500.00</p>
-          </li>
-          <li className={styles['expenses-table__summary-item']}>
-            <p className={styles['expenses-table__summary-month']}>СЕРПЕНЬ</p>
-            <p className={styles['expenses-table__summary-amount']}>25 500.00</p>
-          </li>
-          <li className={styles['expenses-table__summary-item']}>
-            <p className={styles['expenses-table__summary-month']}>ЛИПЕНЬ</p>
-            <p className={styles['expenses-table__summary-amount']}>25 500.00</p>
-          </li>
-          <li className={styles['expenses-table__summary-item']}>
-            <p className={styles['expenses-table__summary-month']}>ЧЕРВЕНЬ</p>
-            <p className={styles['expenses-table__summary-amount']}>25 500.00</p>
-          </li>
-        </ul>
-      </div>
+      {monthlySummary.length > 0 && (
+        <div className={styles['expenses-table__summary']}>
+          <h4 className={styles['expenses-table__summary-title']}>Зведення</h4>
+          <ul className={styles['expenses-table__summary-list']}>
+            {monthlySummary.map((month, index) => (
+              <li key={index} className={styles['expenses-table__summary-item']}>
+                <p className={styles['expenses-table__summary-month']}>
+                  {month.name.toUpperCase()}
+                </p>
+                <p className={styles['expenses-table__summary-amount']}>
+                  {month.total.toFixed(2)}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   )
 }

@@ -14,6 +14,7 @@
     
     &__expensesBlock {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         border-right: .0625rem solid #e0e5eb;
@@ -34,6 +35,7 @@
     &__incomeBlock {
         display: flex;
         align-items: center;
+        flex-direction: column;
         justify-content: center;
         padding: .5rem 1.1875rem;
         gap: .875rem;
@@ -47,5 +49,15 @@
     &__incomeAmount {
         @include text(#407946, .875rem, 700, 0.04em);
         text-transform: none;
+    }
+}
+
+@media (min-width: 47.99875em) {
+    .resultsReport__expensesBlock {
+        flex-direction: row;
+    }
+
+    .resultsReport__incomeBlock {
+        flex-direction: row;
     }
 }

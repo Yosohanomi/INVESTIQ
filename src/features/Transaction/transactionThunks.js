@@ -1,6 +1,6 @@
-import { beckendRoutes } from "../../app/routes/beckendRoutes/beckendRoutes"; 
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { authApi } from "../../shared/axiosAuth/axiosAuth"; 
+import { authApi } from "../../shared/axiosAuth/axiosAuth";
+import { beckendRoutes } from "../../app/routes/beckendRoutes/beckendRoutes";
 
 export const fetchTransactions = createAsyncThunk(
     "transactions/fetchAll",
@@ -44,8 +44,17 @@ export const fetchTransactionsStats = createAsyncThunk(
 
 export const createTransaction = createAsyncThunk(
     "transactions/create",
-    async (transactionData, { rejectWithValue }) => {
+    async (transactionData, { getState, rejectWithValue }) => {
         try {
+            const state = getState();
+            const currentBalance = state.transactions.stats?.balance || 0;
+
+            if (transactionData.type === 'expense' && transactionData.amount > currentBalance) {
+                return rejectWithValue({ 
+                    message: `Недостатньо коштів! Ваш баланс: ${currentBalance.toFixed(2)} грн` 
+                });
+            }
+            
             const response = await authApi.post(beckendRoutes.transactions, transactionData);
             return response.data;
         } catch (error) {
@@ -56,8 +65,17 @@ export const createTransaction = createAsyncThunk(
 
 export const updateTransaction = createAsyncThunk(
     "transactions/update",
-    async ({ id, data }, { rejectWithValue }) => {
+    async ({ id, data }, { getState, rejectWithValue }) => {
         try {
+            const state = getState();
+            const currentBalance = state.transactions.stats?.balance || 0;
+            
+            if (data.type === 'expense' && data.amount > currentBalance) {
+                return rejectWithValue({ 
+                    message: `Недостатньо коштів! Ваш баланс: ${currentBalance.toFixed(2)} грн` 
+                });
+            }
+            
             const response = await authApi.put(beckendRoutes.transaction(id), data);
             return response.data;
         } catch (error) {

@@ -108,7 +108,8 @@
     &__mobileTransactionList {
         display: flex;
         flex-direction: column;
-        margin-top: 3.875rem;
+        margin-top: 3.875rem;   
+        margin: 4.375rem 0;
     }
     
     &__mobileTransactionItem {
@@ -217,6 +218,9 @@
             }
         }
 }
+.balance__enter-mobile {
+    flex-direction: column;
+}
 
 .income {
     font-weight: 700;
@@ -237,7 +241,6 @@
 
 // tablet
 @media (min-width: 47.99875em) {
-
     .homepage__mobileSection {
         display: none;
     }

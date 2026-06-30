@@ -11,6 +11,7 @@
     
     &__form {
         display: flex;
+        flex-direction: column;
         gap: .9375rem;
     }
     
@@ -48,3 +49,20 @@
         @include text(var(--text), .75rem, 500, 0.02em);
     }
 }
+
+@media (min-width: 47.9988rem) {
+    .balance__text {
+        display: flex;
+        gap: .625rem;
+    }
+    .balance__form {
+        flex-direction: row;
+    }
+}
+
+// @media (min-width: 79.9988rem) {
+
+//         .balance__form {
+//             flex-direction: row;
+//         }
+// }

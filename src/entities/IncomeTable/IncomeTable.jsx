@@ -6,6 +6,30 @@ export default function IncomeTable({ transactions = [], onDelete, loading }) {
     return <div className={styles.loading}>Завантаження...</div>;
   }
 
+  const getMonthlySummary = () => {
+    const months = {};
+    
+    transactions.forEach(item => {
+      const date = new Date(item.date);
+      const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+      const monthName = date.toLocaleDateString('uk-UA', { month: 'long', year: 'numeric' });
+      
+      if (!months[monthKey]) {
+        months[monthKey] = {
+          name: monthName,
+          total: 0
+        };
+      }
+      months[monthKey].total += item.amount;
+    });
+    
+    return Object.keys(months)
+      .sort((a, b) => b.localeCompare(a))
+      .map(key => months[key]);
+  };
+
+  const monthlySummary = getMonthlySummary();
+
   return (
     <div className={styles['income-table']}>
       <div className={styles['income-table__thumb']}>
@@ -55,35 +79,23 @@ export default function IncomeTable({ transactions = [], onDelete, loading }) {
         </table>
       </div>
       
-      <div className={styles['income-table__summary']}>
-        <h4 className={styles['income-table__summary-title']}>Зведення</h4>
-        <ul className={styles['income-table__summary-list']}>
-          <li className={styles['income-table__summary-item']}>
-            <p className={styles['income-table__summary-month']}>ЛИСТОПАД</p>
-            <p className={styles['income-table__summary-amount']}>25 500.00</p>
-          </li>
-          <li className={styles['income-table__summary-item']}>
-            <p className={styles['income-table__summary-month']}>ЖОВТЕНЬ</p>
-            <p className={styles['income-table__summary-amount']}>25 500.00</p>
-          </li>
-          <li className={styles['income-table__summary-item']}>
-            <p className={styles['income-table__summary-month']}>ВЕРЕСЕНЬ</p>
-            <p className={styles['income-table__summary-amount']}>25 500.00</p>
-          </li>
-          <li className={styles['income-table__summary-item']}>
-            <p className={styles['income-table__summary-month']}>СЕРПЕНЬ</p>
-            <p className={styles['income-table__summary-amount']}>25 500.00</p>
-          </li>
-          <li className={styles['income-table__summary-item']}>
-            <p className={styles['income-table__summary-month']}>ЛИПЕНЬ</p>
-            <p className={styles['income-table__summary-amount']}>25 500.00</p>
-          </li>
-          <li className={styles['income-table__summary-item']}>
-            <p className={styles['income-table__summary-month']}>ЧЕРВЕНЬ</p>
-            <p className={styles['income-table__summary-amount']}>25 500.00</p>
-          </li>
-        </ul>
-      </div>
+      {monthlySummary.length > 0 && (
+        <div className={styles['income-table__summary']}>
+          <h4 className={styles['income-table__summary-title']}>Зведення</h4>
+          <ul className={styles['income-table__summary-list']}>
+            {monthlySummary.map((month, index) => (
+              <li key={index} className={styles['income-table__summary-item']}>
+                <p className={styles['income-table__summary-month']}>
+                  {month.name.toUpperCase()}
+                </p>
+                <p className={styles['income-table__summary-amount']}>
+                  {month.total.toFixed(2)}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   )
 }

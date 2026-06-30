@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import Container from "../../shared/ui/Container/Container";
 import SVGIcon from "../../assets/svg/symbol-defs.svg";
@@ -12,6 +12,7 @@ import styles from "./MobileIncome.module.scss";
 export default function MobileIncome() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { stats } = useSelector(state => state.transactions);
   const [formData, setFormData] = useState({
     description: '',
     category: '',
@@ -28,6 +29,11 @@ export default function MobileIncome() {
     e.preventDefault();
     if (!formData.description || !formData.amount || !formData.category) {
       alert('Заповніть всі поля');
+      return;
+    }
+
+    if (parseFloat(formData.amount) <= 0) {
+      alert('Сума повинна бути більше 0');
       return;
     }
 
@@ -83,11 +89,17 @@ export default function MobileIncome() {
                 disabled={isLoading}
               >
                 <option value="">Категорія товару</option>
-                <option value="salary">Зарплата</option>
-                <option value="freelance">Фріланс</option>
-                <option value="investment">Інвестиції</option>
-                <option value="gift">Подарунки</option>
-                <option value="other">Інше</option>
+                <option value="Транспорт">Транспорт</option>
+                <option value="Продукти">Продукти</option>
+                <option value="Здоров'я">Здоров'я</option>
+                <option value="Алкоголь">Алкоголь</option>
+                <option value="Розваги">Розваги</option>
+                <option value="Все для дому">Все для дому</option>
+                <option value="Техніка">Техніка</option>
+                <option value="Комуналка, зв'язок">Комуналка, зв'язок</option>
+                <option value="Спорт, хобі">Спорт, хобі</option>
+                <option value="Навчання">Навчання</option>
+                <option value="Інше">Інше</option>
               </select>
             </div>
             
