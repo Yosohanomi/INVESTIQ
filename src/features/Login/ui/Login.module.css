@@ -1,0 +1,79 @@
+.title {
+  padding-top: 3.875rem;
+  color: var(--black-text);
+  font-family: var(--font-family);
+  font-weight: 900;
+  font-size: 4rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-transform: none;
+}
+
+.subtitle {
+  color: var(--dark-text);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-left: 3.125rem;
+  margin-top: -40px;
+}
+
+@media (min-width: 47.99875em) {
+  .section > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .title {
+    color: var(--black-text);
+    font-family: var(--font-family);
+    font-weight: 900;
+    font-size: 6.375rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-transform: none;
+    margin-left: 0;
+  }
+  .subtitle {
+    color: var(--dark-text);
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-left: 3.625rem;
+    margin-top: -80px;
+  }
+}
+@media (min-width: 79.9988em) {
+  .section > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 7.4375rem;
+    padding: 6.4375rem 0;
+  }
+  .title {
+    color: var(--black-text);
+    font-family: var(--font-family);
+    font-weight: 900;
+    font-size: 6.375rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-transform: none;
+    margin-left: 1.8125rem;
+    margin-top: -80px;
+  }
+  .subtitle {
+    color: var(--dark-text);
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+}/*# sourceMappingURL=Login.module.css.map */

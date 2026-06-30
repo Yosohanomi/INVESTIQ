@@ -1,0 +1,151 @@
+.form {
+  margin-top: 3rem;
+  background: var(--bg);
+  width: 100%;
+  box-shadow: 0.3125rem 0.625rem 1.25rem 0 rgba(170, 178, 197, 0.4);
+  border-radius: 1.875rem;
+  margin-bottom: 4.875rem;
+}
+
+.container {
+  display: flex;
+  padding: 1.8125rem 3.1875rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.label {
+  color: var(--dark-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-transform: none;
+  text-align: left;
+}
+
+.input {
+  background: #f6f7fb;
+  padding: 1.0625rem 1.25rem;
+  border-radius: 1.875rem;
+}
+.input::-moz-placeholder {
+  color: var(--light-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-transform: none;
+}
+.input::placeholder {
+  color: var(--light-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-transform: none;
+}
+.input {
+  margin-bottom: 1.875rem;
+}
+@media (any-hover: hover) {
+  .input:hover, .input:focus {
+    outline: none;
+  }
+}
+
+.buttonsThumb {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.9375rem;
+}
+
+.registerButton {
+  background-color: #f5f6fb;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  color: var(--dark-text);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  width: auto;
+  transition: all 0.3s var(--animation);
+}
+.registerButton:focus {
+  box-shadow: 0.3125rem 0.625rem 0.625rem 0 rgba(170, 178, 197, 0.4);
+}
+
+.redBtn {
+  width: auto;
+  transition: all 0.3s var(--animation);
+}
+.redBtn:focus {
+  box-shadow: 0.3125rem 0.625rem 0.625rem 0 rgba(255, 129, 57, 0.4);
+}
+
+.error {
+  color: red;
+  font-size: 0.75rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.success {
+  margin-top: 3rem;
+  background: var(--bg);
+  width: 100%;
+  box-shadow: 0.3125rem 0.625rem 1.25rem 0 rgba(170, 178, 197, 0.4);
+  border-radius: 1.875rem;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.success h2 {
+  margin-bottom: 1rem;
+  color: var(--dark-text);
+}
+.success button {
+  background-color: #f5f6fb;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  color: var(--dark-text);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  width: auto;
+  transition: all 0.3s var(--animation);
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.success button:focus {
+  box-shadow: 0.3125rem 0.625rem 0.625rem 0 rgba(170, 178, 197, 0.4);
+}
+@media (any-hover: hover) {
+  .success button:hover, .success button:focus {
+    box-shadow: 0.3125rem 0.625rem 0.625rem 0 rgba(170, 178, 197, 0.4);
+  }
+}
+
+@media (min-width: 47.99875em) {
+  .form {
+    width: 436px;
+  }
+}
+@media (min-width: 47.99875em) and (any-hover: hover) {
+  .registerButton:hover, .registerButton:focus {
+    box-shadow: 0.3125rem 0.625rem 0.625rem 0 rgba(170, 178, 197, 0.4);
+  }
+}
+@media (min-width: 47.99875em) and (any-hover: hover) {
+  .redBtn:hover, .redBtn:focus {
+    box-shadow: 0.3125rem 0.625rem 0.625rem 0 rgba(255, 129, 57, 0.4);
+  }
+}/*# sourceMappingURL=RegisterForm.module.css.map */

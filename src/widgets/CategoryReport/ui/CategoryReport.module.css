@@ -19,6 +19,9 @@
   margin-top: 1.25rem;
 }
 .categoryReport__arrowLeft {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
   width: 1.25rem;
   height: 1.25rem;
   transform: rotate(180deg);
@@ -33,6 +36,9 @@
   text-transform: uppercase;
 }
 .categoryReport__arrowRight {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
   width: 1.25rem;
   height: 1.25rem;
   fill: var(--red-color);

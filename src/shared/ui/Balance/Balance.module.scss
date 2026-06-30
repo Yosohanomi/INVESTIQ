@@ -23,6 +23,7 @@
         border-radius: 16px;
         width: 125px;
         @include text(var(--black-text), .75rem, 700, 0.02em);
+        position: relative;
 
         &::-webkit-inner-spin-button,
         &::-webkit-outer-spin-button {
@@ -50,6 +51,11 @@
     }
 }
 
+.balance__hint {
+    position: absolute;
+    top: 30%;
+}
+
 @media (min-width: 47.9988rem) {
     .balance__text {
         display: flex;
@@ -58,11 +64,9 @@
     .balance__form {
         flex-direction: row;
     }
+    .balance__hint {
+        position: absolute;
+        top: 16%;
+    }
 }
 
-// @media (min-width: 79.9988rem) {
-
-//         .balance__form {
-//             flex-direction: row;
-//         }
-// }

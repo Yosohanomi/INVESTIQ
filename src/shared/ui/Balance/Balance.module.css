@@ -15,6 +15,7 @@
 }
 .balance__form {
   display: flex;
+  flex-direction: column;
   gap: 0.9375rem;
 }
 .balance__input {
@@ -30,6 +31,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  position: relative;
 }
 .balance__input::-webkit-inner-spin-button, .balance__input::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -67,4 +69,23 @@
   font-size: 0.75rem;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+}
+
+.balance__hint {
+  position: absolute;
+  top: 30%;
+}
+
+@media (min-width: 47.9988rem) {
+  .balance__text {
+    display: flex;
+    gap: 0.625rem;
+  }
+  .balance__form {
+    flex-direction: row;
+  }
+  .balance__hint {
+    position: absolute;
+    top: 16%;
+  }
 }/*# sourceMappingURL=Balance.module.css.map */

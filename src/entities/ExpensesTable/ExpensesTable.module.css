@@ -1,1 +1,137 @@
-/*# sourceMappingURL=ExpensesTable.module.css.map */
+.expenses-table {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 1.875rem;
+  padding-bottom: 3.875rem;
+}
+.expenses-table__thumb {
+  border: 0.125rem solid #f5f6fb;
+  border-radius: 1rem 1rem 0 0;
+  overflow: hidden;
+  border-collapse: collapse;
+  overflow-y: scroll;
+  overflow-x: auto;
+  width: 100%;
+}
+.expenses-table__table {
+  width: 100%;
+  max-height: 23.875rem;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.expenses-table__header {
+  background-color: #f5f6fb;
+}
+.expenses-table__header-cell {
+  color: var(--black-text);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 1rem 1.25rem;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #f5f6fb;
+}
+.expenses-table__row {
+  border-bottom: 0.125rem solid #f5f6fb;
+}
+.expenses-table__cell {
+  border-bottom: 0.125rem solid #f5f6fb;
+  color: var(--dark-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 1rem 1.25rem;
+}
+.expenses-table__amount-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.125rem;
+}
+.expenses-table__delete-button {
+  padding: 0.4375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: all 0.3s var(--animation);
+}
+.expenses-table__delete-button:hover, .expenses-table__delete-button:focus {
+  border-radius: 100%;
+  background-color: #f5f6fb;
+}
+.expenses-table__delete-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  fill: #52555f;
+}
+.expenses-table__summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  background-color: #f5f6fb;
+  width: 14.375rem;
+  overflow: hidden;
+  border: 0.3125rem solid #fefefe;
+  border-radius: 1rem 1rem 0 0;
+}
+.expenses-table__summary-title {
+  color: var(--black-text);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border-bottom: 0.125rem solid #fefefe;
+  text-align: center;
+  width: 100%;
+  padding: 0.9375rem 1.25rem;
+}
+.expenses-table__summary-item {
+  display: flex;
+  padding: 0.9375rem 1.25rem;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+  border-bottom: 0.125rem solid #fefefe;
+}
+.expenses-table__summary-month {
+  color: var(--dark-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: left;
+}
+.expenses-table__summary-amount {
+  color: var(--dark-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+@media (min-width: 47.99875em) {
+  .expenses-table {
+    gap: 2.5rem;
+    flex-direction: column;
+  }
+}
+@media (min-width: 79.9988em) {
+  .expenses-table {
+    flex-direction: row;
+  }
+}/*# sourceMappingURL=ExpensesTable.module.css.map */

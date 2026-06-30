@@ -26,11 +26,12 @@
   display: none;
 }
 .balance__enter-mobile {
+  display: flex;
   flex-direction: column;
   gap: 0.5625rem;
 }
 .balance__text {
-  display: none;
+  display: block;
 }
 .balance__return-icon {
   width: 1.5rem;
@@ -50,15 +51,23 @@
   text-align: center;
 }
 .balance__back {
+  display: flex;
+  background-color: transparent;
   width: 1.25rem;
   height: 1.25rem;
   transform: rotate(180deg);
   fill: var(--red-color);
+  border: none;
+  cursor: pointer;
 }
 .balance__forward {
+  display: flex;
+  background-color: transparent;
   width: 1.25rem;
   height: 1.25rem;
   fill: var(--red-color);
+  border: none;
+  cursor: pointer;
 }
 .balance__current-period {
   color: var(--text);
@@ -99,6 +108,9 @@
   }
   .balance__enter {
     display: flex;
+    flex-direction: row;
+    gap: 2.5625rem;
+    align-items: center;
   }
   .balance__enter-mobile {
     display: none;
@@ -122,6 +134,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1.25rem;
   }
   .balance__calendar-thumb {
     display: flex;
@@ -134,11 +147,15 @@
     height: 1.25rem;
     transform: rotate(180deg);
     fill: var(--red-color);
+    border: none;
+    cursor: pointer;
   }
   .balance__forward {
     width: 1.25rem;
     height: 1.25rem;
     fill: var(--red-color);
+    border: none;
+    cursor: pointer;
   }
   .balance__current-period {
     color: var(--text);
@@ -182,6 +199,9 @@
   }
   .balance__enter {
     display: flex;
+    flex-direction: row;
+    gap: 2.5625rem;
+    align-items: center;
   }
   .balance__enter-mobile {
     display: none;
@@ -205,6 +225,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1.25rem;
   }
   .balance__calendar-thumb {
     display: flex;
@@ -217,11 +238,15 @@
     height: 1.25rem;
     transform: rotate(180deg);
     fill: var(--red-color);
+    border: none;
+    cursor: pointer;
   }
   .balance__forward {
     width: 1.25rem;
     height: 1.25rem;
     fill: var(--red-color);
+    border: none;
+    cursor: pointer;
   }
   .balance__current-period {
     color: var(--text);

@@ -5,7 +5,7 @@
   display: none;
 }
 .homepage__mobileSection {
-  margin-top: 5.8125rem;
+  padding-top: 5.8125rem;
   display: block;
 }
 .homepage__mobileBalanceSection {
@@ -126,6 +126,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 3.875rem;
+  margin: 4.375rem 0;
 }
 .homepage__mobileTransactionItem {
   display: flex;
@@ -236,6 +237,10 @@
   }
 }
 
+.balance__enter-mobile {
+  flex-direction: column;
+}
+
 .income {
   font-weight: 700;
   font-size: 12px;
@@ -257,7 +262,8 @@
     display: none;
   }
   .homepage {
-    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    margin-bottom: 1.875rem;
   }
   .homepage__balance-section {
     display: block;
@@ -270,7 +276,7 @@
     justify-content: flex-end;
     gap: 10.875rem;
     align-items: center;
-    margin-top: 2.5rem;
+    padding-top: 2.5rem;
     margin-bottom: 3rem;
   }
   .homepage__calculate-link {

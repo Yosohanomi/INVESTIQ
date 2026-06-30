@@ -1,0 +1,81 @@
+.section > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 5.875rem;
+  color: var(--black-text);
+  font-family: var(--font-family);
+  font-weight: 900;
+  font-size: 4rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-transform: none;
+  margin-left: 1.8125rem;
+}
+
+.subtitle {
+  color: var(--dark-text);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-left: 3.125rem;
+}
+
+@media (min-width: 47.99875em) {
+  .title {
+    color: var(--black-text);
+    font-family: var(--font-family);
+    font-weight: 900;
+    font-size: 6.375rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-transform: none;
+    margin-left: 0;
+  }
+  .subtitle {
+    color: var(--dark-text);
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-left: 3.625rem;
+  }
+}
+@media (min-width: 79.9988em) {
+  .section > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 7.4375rem;
+    padding: 6.4375rem 0;
+  }
+  .title {
+    color: var(--black-text);
+    font-family: var(--font-family);
+    font-weight: 900;
+    font-size: 6.375rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-transform: none;
+    margin-left: 1.8125rem;
+  }
+  .subtitle {
+    color: var(--dark-text);
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-left: 3.125rem;
+  }
+}/*# sourceMappingURL=Register.module.css.map */

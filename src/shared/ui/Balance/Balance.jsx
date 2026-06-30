@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createTransaction, fetchTransactionsStats } from '../../../features/Transaction/transactionThunks';
+import { BalanceHint } from '../BalanceHint/BalanceHint';
 import styles from './Balance.module.scss';
 
 export const Balance = ({ sp_class, balanceClass, type = 'expense' }) => {
@@ -8,6 +9,25 @@ export const Balance = ({ sp_class, balanceClass, type = 'expense' }) => {
   const { stats } = useSelector(state => state.transactions);
   const [amount, setAmount] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [showHint, setShowHint] = useState(false);
+
+  useEffect(() => {
+    const hasSeenHint = localStorage.getItem('hasSeenBalanceHint');
+    const currentBalance = stats?.balance || 0;
+    
+    if (!hasSeenHint && currentBalance === 0) {
+      const timer = setTimeout(() => {
+        setShowHint(true);
+      }, 800);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [stats]);
+
+  const handleCloseHint = () => {
+    setShowHint(false);
+    localStorage.setItem('hasSeenBalanceHint', 'true');
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,7 +67,7 @@ export const Balance = ({ sp_class, balanceClass, type = 'expense' }) => {
 
   return (
     <div className={`${styles.balance} ${balanceClass}`}>
-      <p className={styles['balance__text']}>Баланс: <span>{currentBalance.toFixed(2)} грн</span> </p>
+      <p className={styles['balance__text']}>Баланс: <span>{currentBalance.toFixed(2)} грн</span></p>
       <form className={styles['balance__form']} onSubmit={handleSubmit}>
         <input 
           className={styles['balance__input']}
@@ -66,6 +86,8 @@ export const Balance = ({ sp_class, balanceClass, type = 'expense' }) => {
           {isLoading ? '...' : 'ПІДТВЕРДИТИ'}
         </button>
       </form>
+      
+      {showHint && <BalanceHint secondClass={styles['balance__hint']} onClose={handleCloseHint} />}
     </div>
   );
 };
