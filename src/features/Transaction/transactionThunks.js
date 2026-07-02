@@ -42,6 +42,19 @@ export const fetchTransactionsStats = createAsyncThunk(
     }
 );
 
+// {
+//     "totalIncome": 15000,
+//     "totalExpense": 8000,
+//     "balance": 7000,
+//     "categoryBreakdown": {
+//       "Продукти": { "income": 0, "expense": 3000 },
+//       "Зарплата": { "income": 15000, "expense": 0 }
+//     },
+//     "monthlyBreakdown": {
+//       "2025-01": { "income": 15000, "expense": 8000 }
+//     }
+//   }
+
 export const createTransaction = createAsyncThunk(
     "transactions/create",
     async (transactionData, { getState, rejectWithValue }) => {
