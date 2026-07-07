@@ -7,38 +7,53 @@ import { frontRoutes } from '../../app/routes/frontRoutes/frontRoutes';
 export default function AppInit({ children }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { loading, isInit } = useSelector(state => state.auth);
+  const { loading, isInit, user } = useSelector(state => state.auth);
   const location = useLocation();
 
   useEffect(() => {
     const init = async () => {
-      try {
-        const token = localStorage.getItem('accessToken');
-        if (!token) {
-          if (location.pathname !== frontRoutes.login && location.pathname !== frontRoutes.register) {
-            navigate(frontRoutes.login);
-          }
-          return;
-        }
+      const token = localStorage.getItem('accessToken');
+      const isLoginPage = location.pathname === frontRoutes.login;
+      const isRegisterPage = location.pathname === frontRoutes.register;
+      const isAuthPage = isLoginPage || isRegisterPage;
+      
+      console.log('AppInit:', { token: !!token, isInit, user, pathname: location.pathname });
 
+      if (isInit && user) {
+        console.log('Вже залогінені');
+        return;
+      }
+
+      if (!token) {
+        console.log('Немає токена');
+        if (!isAuthPage) {
+          navigate(frontRoutes.login);
+        }
+        return;
+      }
+
+      try {
         await dispatch(refresh()).unwrap();
+        console.log('Refresh успішний');
         
-        if (location.pathname === frontRoutes.login || location.pathname === frontRoutes.register) {
+        if (isAuthPage) {
           navigate(frontRoutes.home);
         }
-        
       } catch (error) {
+        console.log('Refresh failed');
         localStorage.removeItem('accessToken');
         localStorage.removeItem('user');
-        
-        if (location.pathname !== frontRoutes.login && location.pathname !== frontRoutes.register) {
+        if (!isAuthPage) {
           navigate(frontRoutes.login);
         }
       }
     };
 
-    init();
-  }, [dispatch, navigate, location.pathname]);
+    if (!isInit) {
+      init();
+    }
+  }, [dispatch, navigate, location.pathname, isInit, user]);
+
   if (loading && !isInit) {
     return <p>Loading...</p>;
   }
