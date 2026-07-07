@@ -216,10 +216,17 @@ export default function Homepage() {
               <div className={styles["homepage__action-buttons"]}>
                 <RedButton text="Ввести" type="submit" />
                 <GrayButton 
-                  text="Очистити" 
-                  type="button"
-                  onClick={() => setFormData({ description: '', amount: '', category: '', date: new Date().toISOString().split('T')[0] })}
-                />
+                    text="Очистити" 
+                    type="button"
+                    onClick={() => {
+                      setFormData({ 
+                        description: '', 
+                        amount: '', 
+                        category: '', 
+                        date: new Date().toISOString().split('T')[0] 
+                      });
+                    }}
+                  />
               </div>
             </form>
 

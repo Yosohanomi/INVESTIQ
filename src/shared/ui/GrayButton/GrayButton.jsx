@@ -1,7 +1,7 @@
 import styles from './GrayButton.module.scss'
-export const GrayButton = ({text}) => {
+export const GrayButton = ({text, onClick, type = 'button'}) => {
   return (
-    <button className={styles.button}>{text}</button>
+    <button onClick={onClick} type={type} className={styles.button}>{text}</button>
   )
 }
 
